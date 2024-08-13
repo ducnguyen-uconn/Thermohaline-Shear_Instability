@@ -2,9 +2,16 @@ clear all;
 close all;
 clc;
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% pick value of z in baru term: =1?
+% define Dz term: Dz=0? and Dz^2=0?
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 % define paramesters [figure 7]
-Ri_list = [1.]; % Richardson number
-Pe_list = [1e4]; % Peclet number
+Ri_list = 1.; % Richardson number
+Pe_list = 1e4; % Peclet number
 Rp = 2.; % density ratio
 Pr = 10.; % Prandtl number
 tau = 0.01; % diffusivity ratio
@@ -53,13 +60,14 @@ for Ri_index=1:length(Ri_list)
                     % compute eigenvalues
                     [eig_vec, eig_val] = eig(A,B);
 
-                    %compute growth rate
+                    % compute growth rate
                     growth_rate{Ri_index,Pe_index}(k_index,l_index)=max(real(diag(eig_val)));
                end
           end
      end
 end
 
+% plot growth rate
 growth_rate{1}(find(growth_rate{1}<0))=NaN;
 data{1}.x=k_list;
 data{1}.y=l_list;
