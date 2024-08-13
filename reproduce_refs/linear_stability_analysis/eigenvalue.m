@@ -25,6 +25,7 @@ DY = 1i*ky*I;
 DZ = D1;
 Laplacian = -(kx^2+ky^2)*I + D2;
 
+% change to diag()*D
 M = -sin(2*pi*z).*DX + (Pr/Pe)*Laplacian;
 N = -sin(2*pi*z).*DX + (1./Pe)*Laplacian;
 K = -sin(2*pi*z).*DX + (tau/Pe)*Laplacian;
