@@ -2,77 +2,88 @@ clear all;
 close all;
 clc;
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% pick value of z in baru term: =1?
-% define Dz term: Dz=0? and Dz^2=0?
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% define paramesters [figure 7b]
+Ri_list = [1., 10.]; % Richardson number
+Pe_list = [1e4, 1e2]; % Peclet number
 
-
-% define paramesters [figure 7]
-Ri_list = 1.; % Richardson number
-Pe_list = 1e4; % Peclet number
 Rp = 2.; % density ratio
 Pr = 10.; % Prandtl number
 tau = 0.01; % diffusivity ratio
 
-k_list=linspace(-4,4,201);
-l_list=logspace(-4,4,401);
-phi_list=1;
+k_list=linspace(-0.5,0.5,200);
+l_list=linspace(-1,1,200);
 
-z=1;%????????????????????????????????
+
+N = 128;
+I=eye(N,N);
+O=zeros(N,N);
+
+% Differentiation Matrices 
+[z, D1] = fourdif(N, 1);
+[z2, D2] = fourdif(N, 2);
+
+zmin = 0.;
+zmax = 1.;
+z = zmin+(1./(2.*pi))*(zmax-zmin)*z;
 
 for Ri_index=1:length(Ri_list)
      Ri=Ri_list(Ri_index);
      for Pe_index=1:length(Pe_list)
           Pe=Pe_list(Pe_index);
+
+          % create an array to store values of growth rate
+          GR = zeros(length(k_list),length(l_list));
+
           for k_index=1:length(k_list)
                k=k_list(k_index);
                for l_index=1:length(l_list)
                     l=l_list(l_index);
                     
                     % compute A
-                    A = [1, 0, 0, 0, 0, 0;
-                         0, 1, 0, 0, 0, 0;
-                         0, 0, 1, 0, 0, 0;
-                         0, 0, 0, 0, 0, 0;
-                         0, 0, 0, 0, 1, 0;
-                         0, 0, 0, 0, 0, 1];
+                    A = [I, O, O, O, O, O;
+                         O, I, O, O, O, O;
+                         O, O, I, O, O, O;
+                         O, O, O, O, O, O;
+                         O, O, O, O, I, O;
+                         O, O, O, O, O, I];
 
                     % compute B
-                    DX = 1i*k;
-                    DY = 1i*l;
-                    DZ = 0;%?
-                    Laplacian = -(k^2+l^2) + 0;%?
-                    M = -sin(2*pi*z)*DX + (Pr/Pe)*Laplacian;%<---------
-                    N = -sin(2*pi*z)*DX + (1./Pe)*Laplacian;
-                    K = -sin(2*pi*z)*DX + (tau/Pe)*Laplacian;
-                    DU = -2*pi*cos(2*pi*z);
-                    G = 4.*pi*pi*Ri / (Rp-1.);
+                    DX = 1i*k*I;
+                    DY = 1i*l*I;
+                    DZ = D1;
+                    Laplacian = -(k^2+l^2)*I + D2;
+                    M = diag(-sin(2*pi*z))*DX + (Pr/Pe)*Laplacian;
+                    N = diag(-sin(2*pi*z))*DX + (1./Pe)*Laplacian;
+                    K = diag(-sin(2*pi*z))*DX + (tau/Pe)*Laplacian;
+                    DU = diag(-2*pi*cos(2*pi*z))*I;
+                    G = (4.*pi*pi*Ri/(Rp-1.))*I;
 
-                    B = [M, 0,DU,-DX, 0, 0;
-                         0, M, 0,-DY, 0, 0;
-                         0, 0, M,-DZ, G,-G;
-                        DX,DY,DZ,  0, 0, 0;
-                         0, 0, 1,  0, N, 0;
-                         0, 0,Rp,  0, 0, K];
+                    B = [M, O,DU,-DX, O, O;
+                         O, M, O,-DY, O, O;
+                         O, O, M,-DZ, G,-G;
+                        DX,DY,DZ,  O, O, O;
+                         O, O, I,  O, N, O;
+                         O, O,Rp*I,O, O, K];
                     
                     % compute eigenvalues
                     [eig_vec, eig_val] = eig(A,B);
 
                     % compute growth rate
-                    growth_rate{Ri_index,Pe_index}(k_index,l_index)=max(real(diag(eig_val)));
+                    GR(k_index,l_index)=max(real(diag(eig_val)));
                end
           end
+
+          % plot growth rate for each case
+          f = figure;
+          % pcolor(k_list,l_list,GR); 
+          % pcolor(k_list,l_list,GR); shading flat;
+          pcolor(k_list,l_list,GR); shading interp;
+          colorbar
+          savingname = ['./growth_rate_Ri=' num2str(Ri),'_Pe=' num2str(Pe)];
+          title(['growth rate Ri=' num2str(Ri),' Pe=' num2str(Pe)])
+          saveas(f,savingname,'png')
+
+          % WriteToVTK(GR, [savingname '.vtk']);
      end
 end
-
-% plot growth rate
-growth_rate{1}(find(growth_rate{1}<0))=NaN;
-data{1}.x=k_list;
-data{1}.y=l_list;
-data{1}.z=growth_rate{1}';
-plot_config.print_size=[1,1000,900];
-plot_config.name=['growth_rate_Ri=',num2str(Ri_list),'_Pe=',num2str(Pe_list),'.png'];
-plot_config.label_list={1,'$k$','$l$'};
-plot_contour(data,plot_config);

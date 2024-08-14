@@ -12,7 +12,7 @@ tau = 0.01; % diffusivity ratio
 kx = 2;
 ky = 0;
 
-N = 64;
+N = 128;
 I=eye(N,N);
 O=zeros(N,N);
 
@@ -26,11 +26,11 @@ DZ = D1;
 Laplacian = -(kx^2+ky^2)*I + D2;
 
 % change to diag()*D
-M = -sin(2*pi*z).*DX + (Pr/Pe)*Laplacian;
-N = -sin(2*pi*z).*DX + (1./Pe)*Laplacian;
-K = -sin(2*pi*z).*DX + (tau/Pe)*Laplacian;
-DU = -2*pi*cos(2*pi*z).*I;
-G = 4.*pi*pi*Ri / (Rp-1.)*I;
+M = diag(-sin(2*pi*z))*DX + (Pr/Pe)*Laplacian;
+N = diag(-sin(2*pi*z))*DX + (1./Pe)*Laplacian;
+K = diag(-sin(2*pi*z))*DX + (tau/Pe)*Laplacian;
+DU = diag(-2*pi*cos(2*pi*z))*I;
+G = (4.*pi*pi*Ri / (Rp-1.))*I;
 
 A = [I, O, O, O, O, O;
      O, I, O, O, O, O;
@@ -47,6 +47,7 @@ B = [M, O,DU,-DX, O, O;
 
 [eig_vec, eig_val] = eig(A,B);
 
+max(real(diag(eig_val)))
 
 % plot eigenvalues
 f = figure;
