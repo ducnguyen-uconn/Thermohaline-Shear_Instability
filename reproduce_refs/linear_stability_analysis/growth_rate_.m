@@ -1,31 +1,19 @@
 clear all;
 close all;
 clc;
-
+set(0, 'DefaultAxesFontName', 'Times New Roman');
+set(0, 'defaultTextFontName', 'Times New Roman');
 
 % define paramesters [figure 7b]
 Ri_list = [1., 10.]; % Richardson number
 Pe_list = [1e4, 1e2]; % Peclet number
 
 Rp = 2.; % density ratio
-Pr = 10.; % Prandtl number
 tau = 0.01; % diffusivity ratio
 
-k_list=linspace(-0.5,0.5,200);
-l_list=linspace(-1,1,200);
+k_list=linspace(-0.5,0.5,10);
+l_list=linspace(-1,1,10);
 
-
-N = 128;
-I=eye(N,N);
-O=zeros(N,N);
-
-% Differentiation Matrices 
-[z, D1] = fourdif(N, 1);
-[z2, D2] = fourdif(N, 2);
-
-zmin = 0.;
-zmax = 1.;
-z = zmin+(1./(2.*pi))*(zmax-zmin)*z;
 
 for Ri_index=1:length(Ri_list)
      Ri=Ri_list(Ri_index);
@@ -40,34 +28,8 @@ for Ri_index=1:length(Ri_list)
                for l_index=1:length(l_list)
                     l=l_list(l_index);
                     
-                    % compute A
-                    A = [I, O, O, O, O, O;
-                         O, I, O, O, O, O;
-                         O, O, I, O, O, O;
-                         O, O, O, O, O, O;
-                         O, O, O, O, I, O;
-                         O, O, O, O, O, I];
-
-                    % compute B
-                    DX = 1i*k*I;
-                    DY = 1i*l*I;
-                    DZ = D1;
-                    Laplacian = -(k^2+l^2)*I + D2;
-                    M = diag(-sin(2*pi*z))*DX + (Pr/Pe)*Laplacian;
-                    N = diag(-sin(2*pi*z))*DX + (1./Pe)*Laplacian;
-                    K = diag(-sin(2*pi*z))*DX + (tau/Pe)*Laplacian;
-                    DU = diag(-2*pi*cos(2*pi*z))*I;
-                    G = (4.*pi*pi*Ri/(Rp-1.))*I;
-
-                    B = [M, O,DU,-DX, O, O;
-                         O, M, O,-DY, O, O;
-                         O, O, M,-DZ, G,-G;
-                        DX,DY,DZ,  O, O, O;
-                         O, O, I,  O, N, O;
-                         O, O,Rp*I,O, O, K];
-                    
                     % compute eigenvalues
-                    [eig_vec, eig_val] = eig(A,B);
+                    [eig_vec,eig_val] = eig_Radko2016(Ri,Pe,Rp,tau,k,l);
 
                     % compute growth rate
                     GR(k_index,l_index)=max(real(diag(eig_val)));
