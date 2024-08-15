@@ -10,7 +10,7 @@ function GR = growthrate_Radko2016(Ri,Pe,Rp,Pr,tau,kx_list,ky_list,N)
              [eig_vec,eig_val] = eig_Radko2016(Ri,Pe,Rp,Pr,tau,kx,ky,N);
 
              % compute growth rate
-             GR(kx_index,ky_index)=max(real(diag(eig_val)));
+             GR(kx_index,ky_index)=max(real(diag(-1*eig_val)));
         end
    end
 end

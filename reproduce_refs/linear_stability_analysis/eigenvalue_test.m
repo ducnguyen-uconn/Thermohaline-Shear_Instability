@@ -11,12 +11,12 @@ Pr = 10.;
 tau = 0.01; % diffusivity ratio
 kx = 0.125;
 ky = 0;
-N = 0;%size = 2N+1
+N = 50;%size = 2N+1
 
 [eig_vec,eig_val] = eig_Radko2016(Ri,Pe,Rp,Pr,tau,kx,ky,N);
 
 eig_val=diag(eig_val);
-eig_val(find(real(eig_val)==Inf))=-Inf;
+% eig_val(find(real(eig_val)==Inf))=-Inf;
 fprintf('max of Re(eig_val) is %s\n', mat2str(max(real(eig_val))));
 
 % plot eigenvalues

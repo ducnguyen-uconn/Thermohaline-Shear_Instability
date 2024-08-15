@@ -10,12 +10,12 @@ Pe_list = [1e4, 1e2]; % Peclet number
 Rp = 2.; % density ratio
 tau = 0.01; % diffusivity ratio
 
-k_list=linspace(-0.5,0.5,100);
-l_list=linspace(-1,1,100);
+k_list=linspace(-0.5,0.5,4);
+l_list=linspace(-1,1,4);
 
 Pr = 10.;
 
-N = 1; %size=2N+1
+N = 50; %size=2N+1
 
 
 for Ri_index=1:length(Ri_list)

@@ -11,7 +11,7 @@ Pr = 10.;
 tau = 0.01; % diffusivity ratio
 kx = 0.125;
 ky = 0;
-N = 1;%size = 2N+1
+N = 100;%size = 2N+1
 
 [eig_vec,eig_val] = eig_Radko2016(Ri,Pe,Rp,Pr,tau,kx,ky,N);
 

@@ -20,6 +20,9 @@ function [eigenvector,eigenvalue] = eig_Radko2016(Ri,Pe,Rp,Pr,tau,kx,ky,N)
      [z1, D1] = fourdif(nSize, 1);
      [z, D2] = fourdif(nSize, 2);
 
+     % transfor canonical interval
+     z = 0 + (1/(2*pi))*(1-0)*z;
+
      DX = 1i*kx*I;
      DY = 1i*ky*I;
      DZ = D1;
