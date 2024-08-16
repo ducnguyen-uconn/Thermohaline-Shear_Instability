@@ -9,14 +9,13 @@ Pe = 1e2; % Peclet number
 Rp = 2.; % density ratio
 Pr = 10.;
 tau = 0.01; % diffusivity ratio
-kx = 0.125;
+kx = 0.1;
 ky = 0;
-N = 50;%size = 2N+1
+N = 125;%size = 2N+1
 
 [eig_vec,eig_val] = eig_Radko2016(Ri,Pe,Rp,Pr,tau,kx,ky,N);
 
 eig_val=diag(eig_val);
-% eig_val(find(real(eig_val)==Inf))=-Inf;
 fprintf('max of Re(eig_val) is %s\n', mat2str(max(real(eig_val))));
 
 % plot eigenvalues
@@ -26,4 +25,5 @@ line([0 0], ylim,'Color','black');  %x-axis
 line(xlim, [0 0],'Color','black');  %y-axis
 xlabel('real') 
 ylabel('imag',"Rotation",0) 
-savefigure(gca,'eigenvalues_test.png');
+title(['eigenvalues Ri=' num2str(Ri),' Pe=' num2str(Pe)])
+savefigure(gca,['eigenvalues_Ri=' num2str(Ri) '_Pe=' num2str(Pe) '_N=' num2str(N) '.png']);

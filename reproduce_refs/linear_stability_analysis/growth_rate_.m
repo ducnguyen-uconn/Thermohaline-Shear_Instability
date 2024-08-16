@@ -4,14 +4,14 @@ clc;
 setfigure;
 
 % define paramesters [figure 7b]
-Ri_list = [1., 10.]; % Richardson number
-Pe_list = [1e4, 1e2]; % Peclet number
+Ri_list = [10.]; % Richardson number
+Pe_list = [1e2]; % Peclet number
 
 Rp = 2.; % density ratio
 tau = 0.01; % diffusivity ratio
 
-k_list=linspace(-0.5,0.5,4);
-l_list=linspace(-1,1,4);
+k_list=linspace(-0.5,0.5,10);
+l_list=linspace(-0.5,0.5,10);
 
 Pr = 10.;
 
@@ -23,12 +23,11 @@ for Ri_index=1:length(Ri_list)
      for Pe_index=1:length(Pe_list)
           Pe=Pe_list(Pe_index);
 
-          GR = growthrate_Radko2016(Ri,Pe,Rp,Pr,tau,k_list,l_list,N);
+          GR = growthrate_Radko2016(Ri,Pe,Rp,Pr,tau,k_list,l_list,N)
 
           % plot growth rate for each case
           f = figure;
-          pcolor(k_list,l_list,GR); shading interp;
-          colorbar
+          pcolor(k_list,l_list,GR); shading interp; colorbar;
           filename = ['./growth_rate_Ri=' num2str(Ri),'_Pe=' num2str(Pe)];
           title(['growth rate Ri=' num2str(Ri),' Pe=' num2str(Pe)])
           xlabel('{\it{k}}')

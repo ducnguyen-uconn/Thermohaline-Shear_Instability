@@ -35,7 +35,7 @@ end
 % plot 
 f = figure;
 pcolor(x,z,T); shading interp;
-colormap(turbo);
+% colormap(turbo);
 colorbar;
 title('$\hat{T}$','Interpreter','latex')
 xlabel('{\it{x}}')
