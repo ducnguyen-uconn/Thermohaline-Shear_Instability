@@ -4,14 +4,14 @@ clc;
 setfigure;
 
 % define paramesters
-Ri = 1.; % Richardson number
-Pe = 1e4; % Peclet number
+Ri = 10.; % Richardson number
+Pe = 1e2; % Peclet number
 Rp = 2.; % density ratio
 Pr = 10.;
 tau = 0.01; % diffusivity ratio
 kx = 0.1;
 ky = 0;
-N = 100;%size = 2N+1
+N = 40;%size = 2N+1
 
 [eig_vec,eig_val] = eig_Radko2016(Ri,Pe,Rp,Pr,tau,kx,ky,N);
 
