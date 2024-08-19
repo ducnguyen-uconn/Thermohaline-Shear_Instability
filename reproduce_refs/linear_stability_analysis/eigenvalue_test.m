@@ -4,8 +4,8 @@ clc;
 setfigure;
 
 % define paramesters
-Ri = 10.; % Richardson number
-Pe = 1e2; % Peclet number
+Ri = 1.; % Richardson number
+Pe = 1e4; % Peclet number
 Rp = 2.; % density ratio
 Pr = 10.;
 tau = 0.01; % diffusivity ratio

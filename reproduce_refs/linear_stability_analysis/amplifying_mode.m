@@ -15,11 +15,11 @@ N = 100;%size = 2N+1
 
 [eig_vec,eig_val] = eig_Radko2016(Ri,Pe,Rp,Pr,tau,kx,ky,N);
 
-writematrix(eig_vec,'eig_vec_tab.txt','Delimiter','tab')
-writematrix(eig_val,'eig_val_tab.txt','Delimiter','tab')
-fprintf('size of eig_vec is %s\n', mat2str(size(eig_vec)));
+% writematrix(eig_vec,'eig_vec_tab.txt','Delimiter','tab')
+% writematrix(eig_val,'eig_val_tab.txt','Delimiter','tab')
+% fprintf('size of eig_vec is %s\n', mat2str(size(eig_vec)));
 
-[maxreal,maxindex] = min(real(diag(eig_val)));
+[maxreal,maxindex] = max(real(diag(eig_val)))
 
 varnum = 6; % number of variables [u,v,w,p,T,S]
 
@@ -63,7 +63,7 @@ for x_index=1:length(x)
 end
 
 % plot 
-f = figure;
+f1 = figure;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 pcolor(x,z,u); shading interp;
 % colormap(turbo);
@@ -77,6 +77,7 @@ yticks([0 1])
 pbaspect([2 1 1])
 savefigure(gca,'amplifying_mode_test_u.png');
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+f2 = figure;
 pcolor(x,z,w); shading interp;
 % colormap(turbo);
 colorbar;
@@ -89,6 +90,7 @@ yticks([0 1])
 pbaspect([2 1 1])
 savefigure(gca,'amplifying_mode_test_w.png');
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+f3 = figure;
 pcolor(x,z,T); shading interp;
 % colormap(turbo);
 colorbar;
@@ -101,6 +103,7 @@ yticks([0 1])
 pbaspect([2 1 1])
 savefigure(gca,'amplifying_mode_test_T.png');
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+f4 = figure;
 pcolor(x,z,S); shading interp;
 % colormap(turbo);
 colorbar;
