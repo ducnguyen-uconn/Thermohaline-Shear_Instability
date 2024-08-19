@@ -19,14 +19,16 @@ function [eigenvector,eigenvalue] = eig_Radko2016(Ri,Pe,Rp,Pr,tau,kx,ky,N)
      % Differentiation Matrices 
      [z1, D1] = fourdif(nSize, 1);
      [z, D2] = fourdif(nSize, 2);
-     
+
      % interval transformation
      z = 0 + (1/(2*pi))*(1-0)*z;
+     D1 = 2*pi*D1;
+     D2 = 4*pi*pi*D2;
 
      DX = 1i*kx*I;
      DY = 1i*ky*I;
-     DZ = 2*pi*D1;
-     Laplacian = -(kx^2+ky^2)*I + 4*pi*pi*D2;
+     DZ = D1;
+     Laplacian = -(kx^2+ky^2)*I + D2;
 
      M1 = diag(-sin(2*pi*z))*DX + (Pr/Pe)*Laplacian;
      M2 = diag(-sin(2*pi*z))*DX + (1./Pe)*Laplacian;
