@@ -12,7 +12,6 @@ function GR = growthrate_Radko2016(Ri,Pe,Rp,Pr,tau,kx_list,ky_list,N)
             kx=kx_list(kx_index);
             for ky_index=1:sizeOfky
                ky=ky_list(ky_index);
-            
                % compute eigenvalues
                [eig_vec,eig_val] = eig_Radko2016(Ri,Pe,Rp,Pr,tau,kx,ky,N);
                eig_val(find(real(eig_val)>10^5))=-Inf;
@@ -26,7 +25,6 @@ function GR = growthrate_Radko2016(Ri,Pe,Rp,Pr,tau,kx_list,ky_list,N)
             kx=kx_list(kx_index);
             for ky_index=1:sizeOfky
                ky=ky_list(ky_index);
-            
                % compute eigenvalues
                [eig_vec,eig_val] = eig_Radko2016(Ri,Pe,Rp,Pr,tau,kx,ky,N);
                eig_val(find(real(eig_val)>10^5))=-Inf;
@@ -35,5 +33,4 @@ function GR = growthrate_Radko2016(Ri,Pe,Rp,Pr,tau,kx_list,ky_list,N)
             end
         end
     end
-    
 end

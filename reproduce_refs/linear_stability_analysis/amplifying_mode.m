@@ -15,27 +15,27 @@ N = 100;%size = 2N+1
 
 [eig_vec,eig_val] = eig_Radko2016(Ri,Pe,Rp,Pr,tau,kx,ky,N);
 
-eig_val(find(real(eig_val)>10^12))=-Inf;
+eig_val(find(real(eig_val)>10^5))=-Inf;
 
 % writematrix(eig_vec,'eig_vec_tab.txt','Delimiter','tab')
 % writematrix(eig_val,'eig_val_tab.txt','Delimiter','tab')
 % fprintf('size of eig_vec is %s\n', mat2str(size(eig_vec)));
 
-[maxreal,maxindex] = max(real(diag(eig_val)))
+[maxreal,maxindex] = max(real(diag(eig_val)));
 
 varnum = 6; % number of variables [u,v,w,p,T,S]
 
-
-x=linspace(0,2*pi/kx,101); % wavelength = 2*pi/kx
-z=linspace(0,1,101);
+nSize = 2*N+1;
+x=linspace(0,2*pi/kx,nSize); % wavelength = 2*pi/kx
+z=linspace(0,1,nSize);
 
 % create an array to store values of temperature
 T = zeros(length(x),length(z));
 S = zeros(length(x),length(z));
 u = zeros(length(x),length(z));
 w = zeros(length(x),length(z));
-for x_index=1:length(x)
-    for z_index=1:length(z)
+parfor x_index=1:nSize
+    for z_index=1:nSize
         exp1 = exp(1i*kx*x(x_index) + 0);
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         sumexp2 = 0;
