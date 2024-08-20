@@ -44,23 +44,23 @@ for x_index=1:length(x)
         end
         u(x_index,z_index) = real(exp1*sumexp2);
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-        sumexp2 = 0;
-        for index=-N:N
-            sumexp2 = sumexp2+eig_vec(maxindex,(index+N)*varnum+3)*exp(2*pi*1i*index*z(z_index));
-        end
-        w(x_index,z_index) = real(exp1*sumexp2);
-        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-        sumexp2 = 0;
-        for index=-N:N
-            sumexp2 = sumexp2+eig_vec(maxindex,(index+N)*varnum+5)*exp(2*pi*1i*index*z(z_index));
-        end
-        T(x_index,z_index) = real(exp1*sumexp2);
-        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-        sumexp2 = 0;
-        for index=-N:N
-            sumexp2 = sumexp2+eig_vec(maxindex,(index+N)*varnum+6)*exp(2*pi*1i*index*z(z_index));
-        end
-        S(x_index,z_index) = real(exp1*sumexp2);
+        % sumexp2 = 0;
+        % for index=-N:N
+        %     sumexp2 = sumexp2+eig_vec(maxindex,(index+N)*varnum+3)*exp(2*pi*1i*index*z(z_index));
+        % end
+        % w(x_index,z_index) = real(exp1*sumexp2);
+        % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % sumexp2 = 0;
+        % for index=-N:N
+        %     sumexp2 = sumexp2+eig_vec(maxindex,(index+N)*varnum+5)*exp(2*pi*1i*index*z(z_index));
+        % end
+        % T(x_index,z_index) = real(exp1*sumexp2);
+        % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % sumexp2 = 0;
+        % for index=-N:N
+        %     sumexp2 = sumexp2+eig_vec(maxindex,(index+N)*varnum+6)*exp(2*pi*1i*index*z(z_index));
+        % end
+        % S(x_index,z_index) = real(exp1*sumexp2);
     end
 end
 
@@ -76,44 +76,44 @@ ylabel('{\it{z}}',"Rotation",0)
 xticks([0 2*pi/kx])
 xticklabels({'0','2\pi/{\itk}'})
 yticks([0 1])
-pbaspect([2 1 1])
+pbaspect([1 1 1])
 savefigure(gca,'amplifying_mode_test_u.png');
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-f2 = figure;
-pcolor(x,z,w); shading interp;
-% colormap(turbo);
-colorbar;
-title('$\hat{w}$','Interpreter','latex')
-xlabel('{\it{x}}')
-ylabel('{\it{z}}',"Rotation",0)
-xticks([0 2*pi/kx])
-xticklabels({'0','2\pi/{\itk}'})
-yticks([0 1])
-pbaspect([2 1 1])
-savefigure(gca,'amplifying_mode_test_w.png');
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-f3 = figure;
-pcolor(x,z,T); shading interp;
-% colormap(turbo);
-colorbar;
-title('$\hat{T}$','Interpreter','latex')
-xlabel('{\it{x}}')
-ylabel('{\it{z}}',"Rotation",0)
-xticks([0 2*pi/kx])
-xticklabels({'0','2\pi/{\itk}'})
-yticks([0 1])
-pbaspect([2 1 1])
-savefigure(gca,'amplifying_mode_test_T.png');
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-f4 = figure;
-pcolor(x,z,S); shading interp;
-% colormap(turbo);
-colorbar;
-title('$\hat{S}$','Interpreter','latex')
-xlabel('{\it{x}}')
-ylabel('{\it{z}}',"Rotation",0)
-xticks([0 2*pi/kx])
-xticklabels({'0','2\pi/{\itk}'})
-yticks([0 1])
-pbaspect([2 1 1])
-savefigure(gca,'amplifying_mode_test_S.png');
+% f2 = figure;
+% pcolor(x,z,w); shading interp;
+% % colormap(turbo);
+% colorbar;
+% title('$\hat{w}$','Interpreter','latex')
+% xlabel('{\it{x}}')
+% ylabel('{\it{z}}',"Rotation",0)
+% xticks([0 2*pi/kx])
+% xticklabels({'0','2\pi/{\itk}'})
+% yticks([0 1])
+% pbaspect([2 1 1])
+% savefigure(gca,'amplifying_mode_test_w.png');
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% f3 = figure;
+% pcolor(x,z,T); shading interp;
+% % colormap(turbo);
+% colorbar;
+% title('$\hat{T}$','Interpreter','latex')
+% xlabel('{\it{x}}')
+% ylabel('{\it{z}}',"Rotation",0)
+% xticks([0 2*pi/kx])
+% xticklabels({'0','2\pi/{\itk}'})
+% yticks([0 1])
+% pbaspect([2 1 1])
+% savefigure(gca,'amplifying_mode_test_T.png');
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% f4 = figure;
+% pcolor(x,z,S); shading interp;
+% % colormap(turbo);
+% colorbar;
+% title('$\hat{S}$','Interpreter','latex')
+% xlabel('{\it{x}}')
+% ylabel('{\it{z}}',"Rotation",0)
+% xticks([0 2*pi/kx])
+% xticklabels({'0','2\pi/{\itk}'})
+% yticks([0 1])
+% pbaspect([2 1 1])
+% savefigure(gca,'amplifying_mode_test_S.png');
