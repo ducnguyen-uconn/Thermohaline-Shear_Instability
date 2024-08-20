@@ -16,7 +16,10 @@ N = 100;%size = 2N+1
 [eig_vec,eig_val] = eig_Radko2016(Ri,Pe,Rp,Pr,tau,kx,ky,N);
 
 eig_val=diag(eig_val);
+eig_val(find(real(eig_val)>10^12))=-Inf;
 fprintf('max of Re(eig_val) is %s\n', mat2str(max(real(eig_val))));
+writematrix(eig_vec,'eig_vec_tab.txt','Delimiter','tab')
+writematrix(eig_val,'eig_val_tab.txt','Delimiter','tab')
 
 % plot eigenvalues
 f = figure;

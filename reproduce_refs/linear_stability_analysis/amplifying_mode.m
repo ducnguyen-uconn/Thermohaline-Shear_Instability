@@ -15,6 +15,8 @@ N = 100;%size = 2N+1
 
 [eig_vec,eig_val] = eig_Radko2016(Ri,Pe,Rp,Pr,tau,kx,ky,N);
 
+eig_val(find(real(eig_val)>10^12))=-Inf;
+
 % writematrix(eig_vec,'eig_vec_tab.txt','Delimiter','tab')
 % writematrix(eig_val,'eig_val_tab.txt','Delimiter','tab')
 % fprintf('size of eig_vec is %s\n', mat2str(size(eig_vec)));
