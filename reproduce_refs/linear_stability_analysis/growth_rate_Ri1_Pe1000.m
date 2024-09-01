@@ -4,18 +4,17 @@ clc;
 setfigure;
 
 % define paramesters [figure 7b]
-Ri = 10.; % Richardson number
-Pe = 1e2; % Peclet number
+Ri = 1.; % Richardson number
+Pe = 1e3; % Peclet number
 Rp = 2.; % density ratio
 tau = 0.01; % diffusivity ratio
 Pr = 10.;
 filename = ['./growth_rate_Ri=' num2str(Ri),'_Pe=' num2str(Pe)];
-k_list=linspace(-0.5,0.5,100)';
-l_list=linspace(-0.5,0.5,100)';
+k_list=linspace(-4,4,100)';
+l_list=linspace(-4,4,100)';
 N = 40; %size=2N+1
 
 GR = growthrate_Radko2016(Ri,Pe,Rp,Pr,tau,k_list,l_list,N);
-
 [kp,lp,interpGR] = interp(k_list,l_list,GR,1000,1000);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% <---- export data in vtk-format
 vtkwrite([filename '.vtk'],'structured_points','growth_rate', transpose(interpGR));

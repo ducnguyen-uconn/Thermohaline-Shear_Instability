@@ -21,14 +21,14 @@ restart = (len(sys.argv) > 1 and sys.argv[1] == '--restart')
 
 dealias = 1  
 pi = np.pi
-# Rp, Ri, Pe, tau = 2., 1., 1e4, 0.01 # figure 3
-Rp, Ri, Pe, tau = 2., 10., 1e2, 0.01 # figure 4
+Rp, Ri, Pe, tau = 2., 1., 1e4, 0.01 # figure 3
+# Rp, Ri, Pe, tau = 2., 10., 1e2, 0.01 # figure 4
 Pr = 10.  # Prandtl number
-Lx, Lz = 64., 1.
+Lx, Lz = 2., 1.
 # Nx, Nz = 384, 192
 Nx, Nz = 768, 384 
 # Nx, Nz = 1024, 1024
-stop_sim_time = 400 + 300*restart # Stopping criteria
+stop_sim_time = 50000 + 20000*restart # Stopping criteria
 # Bases
 coords = d3.CartesianCoordinates('x','z')
 dist = d3.Distributor(coords, dtype=np.float64)
@@ -100,7 +100,7 @@ else:
 
 
 # store data for analysis later
-dataset = solver.evaluator.add_file_handler('snapshots', sim_dt=50.0, max_writes=1000, mode=file_handler_mode)
+dataset = solver.evaluator.add_file_handler('snapshots', sim_dt=200.0, max_writes=1000, mode=file_handler_mode)
 dataset.add_task(te, name='temperature')
 dataset.add_task(sa, name='salinity')
 dataset.add_task(p, name='pressure')
@@ -108,7 +108,7 @@ dataset.add_task(u@ex, name='velocity_u')
 dataset.add_task(u@ez, name='velocity_w')
 dataset.add_task(-d3.div(d3.skew(u)), name='vorticity')
 # store data to restart later
-checkpoints = solver.evaluator.add_file_handler('checkpoints', sim_dt=50, max_writes=1, mode=file_handler_mode)
+checkpoints = solver.evaluator.add_file_handler('checkpoints', sim_dt=5000, max_writes=1, mode=file_handler_mode)
 checkpoints.add_tasks(solver.state)
 
 # CFL
@@ -129,7 +129,7 @@ try:
     while solver.proceed:
         timestep = CFL.compute_timestep()
         solver.step(timestep)  
-        if (solver.sim_time-oldtime)>=50.:      
+        if (solver.sim_time-oldtime)>=1000.:      
             oldtime = solver.sim_time
             logger.info('Completed iteration {}, time={:.3f}, dt={:.10f}'.format(solver.iteration, solver.sim_time, timestep))        
             ########################### <--- plot instantaneous temperature distribution

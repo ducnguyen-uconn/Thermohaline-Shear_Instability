@@ -24,11 +24,11 @@ pi = np.pi
 # Rp, Ri, Pe, tau = 2., 1., 1e4, 0.01 # figure 3
 Rp, Ri, Pe, tau = 2., 10., 1e2, 0.01 # figure 4
 Pr = 10.  # Prandtl number
-Lx, Lz = 64., 1.
+Lx, Lz = 64., 64.
 # Nx, Nz = 384, 192
-Nx, Nz = 768, 384 
-# Nx, Nz = 1024, 1024
-stop_sim_time = 400 + 300*restart # Stopping criteria
+# Nx, Nz = 768, 384 
+Nx, Nz = 1024, 1024
+stop_sim_time = 5000 + 5000*restart # Stopping criteria
 # Bases
 coords = d3.CartesianCoordinates('x','z')
 dist = d3.Distributor(coords, dtype=np.float64)
@@ -89,8 +89,8 @@ if not restart:
     te.fill_random('g', seed=42, distribution='normal', scale=0.7*1e-4) # Random noise
     sa.fill_random('g', seed=42, distribution='normal', scale=0.7*1e-4) # Random noise
     file_handler_mode = 'overwrite'
-    initial_timestep = 0.2
-    max_timestep = 0.2
+    initial_timestep = 0.02
+    max_timestep = 0.02
 else:
     write, initial_timestep = solver.load_state('checkpoints/checkpoints_s1.h5')
     initial_timestep = 0.02
@@ -100,7 +100,7 @@ else:
 
 
 # store data for analysis later
-dataset = solver.evaluator.add_file_handler('snapshots', sim_dt=50.0, max_writes=1000, mode=file_handler_mode)
+dataset = solver.evaluator.add_file_handler('snapshots', sim_dt=100.0, max_writes=1000, mode=file_handler_mode)
 dataset.add_task(te, name='temperature')
 dataset.add_task(sa, name='salinity')
 dataset.add_task(p, name='pressure')
@@ -108,7 +108,7 @@ dataset.add_task(u@ex, name='velocity_u')
 dataset.add_task(u@ez, name='velocity_w')
 dataset.add_task(-d3.div(d3.skew(u)), name='vorticity')
 # store data to restart later
-checkpoints = solver.evaluator.add_file_handler('checkpoints', sim_dt=50, max_writes=1, mode=file_handler_mode)
+checkpoints = solver.evaluator.add_file_handler('checkpoints', sim_dt=1000, max_writes=1, mode=file_handler_mode)
 checkpoints.add_tasks(solver.state)
 
 # CFL
@@ -129,7 +129,7 @@ try:
     while solver.proceed:
         timestep = CFL.compute_timestep()
         solver.step(timestep)  
-        if (solver.sim_time-oldtime)>=50.:      
+        if (solver.sim_time-oldtime)>=100.:      
             oldtime = solver.sim_time
             logger.info('Completed iteration {}, time={:.3f}, dt={:.10f}'.format(solver.iteration, solver.sim_time, timestep))        
             ########################### <--- plot instantaneous temperature distribution

@@ -15,17 +15,15 @@ l_list=linspace(-4,4,100)';
 N = 40; %size=2N+1
 
 GR = growthrate_Radko2016(Ri,Pe,Rp,Pr,tau,k_list,l_list,N);
-WriteToVTK(GR, [filename '.vtk']);
-GR(find(GR<0))=NaN;
-% plot growth rate for each case
+[kp,lp,interpGR] = interp(k_list,l_list,GR,1000,1000);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% <---- export data in vtk-format
+vtkwrite([filename '.vtk'],'structured_points','growth_rate', transpose(interpGR));
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+interpGR(find(interpGR<0))=NaN; % NaN values will be displayed on figure -> white color
+% plot growth rate
 f = figure;
-pcolor(k_list,l_list,transpose(GR));
-% surf(Xq,Zq,transpose(interpGR));view(2);
-shading interp; 
-colormap(turbo);
-colorbar;
+pcolor(kp,lp,transpose(interpGR));shading interp;colormap(jet);colorbar;
 pbaspect([1 1 1])
-% title(['growth rate Ri=' num2str(Ri),' Pe=' num2str(Pe)])
 xlabel('{\it{k}}')
 ylabel('{\it{l}}',"Rotation",0)
 savefigure(gca,[filename '.png']);
