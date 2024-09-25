@@ -96,14 +96,14 @@ problem.add_equation("trace(grad(up))+tau_pp = 0")
 problem.add_equation("integ(pm) = 0") # Pressure gauge
 problem.add_equation("integ(pp) = 0") # Pressure gauge
 
-problem.add_equation("dt(um) + Ubg*dx(um) + um@ez*dz(Ubg)*ex + grad(pm) - (Pr/Pe)*lap(um) - (4*pi*pi*Ri/(Rp-1))*(Tm-Sm)*ez = - dz(h_mean(up@ez*up))")
-problem.add_equation("dt(up) + Ubg*dx(up) + up@ez*dz(Ubg)*ex + grad(pp) - (Pr/Pe)*lap(up) - (4*pi*pi*Ri/(Rp-1))*(Tp-Sp)*ez = - up@grad(um)-um@grad(up)-up@grad(up)+dz(h_mean(up@ez*up))")
+problem.add_equation("dt(um) + Ubg*dx(um) + (um@ez)*dz(Ubg)*ex + grad(pm) - (Pr/Pe)*lap(um) - (4*pi*pi*Ri/(Rp-1))*(Tm-Sm)*ez = - dz(h_mean((up@ez)*up))")
+problem.add_equation("dt(up) + Ubg*dx(up) + (up@ez)*dz(Ubg)*ex + grad(pp) - (Pr/Pe)*lap(up) - (4*pi*pi*Ri/(Rp-1))*(Tp-Sp)*ez = - up@grad(um)-um@grad(up)-up@grad(up)+dz(h_mean((up@ez)*up))")
 
-problem.add_equation("dt(Tm) - (1./Pe)*lap(Tm) - um@ez = - dz(h_mean(up@ez*Tp))")
-problem.add_equation("dt(Tp) - (1./Pe)*lap(Tp) - up@ez = - up@grad(Tm)-um@grad(Tp)-up@grad(Tp)+dz(h_mean(up@ez*Tp))")
+problem.add_equation("dt(Tm) - (1./Pe)*lap(Tm) - um@ez = - dz(h_mean((up@ez)*Tp))")
+problem.add_equation("dt(Tp) - (1./Pe)*lap(Tp) - up@ez = - up@grad(Tm)-um@grad(Tp)-up@grad(Tp)+dz(h_mean((up@ez)*Tp))")
 
-problem.add_equation("dt(Sm) - (tau/Pe)*lap(Sm) - Rp*um@ez = - dz(h_mean(up@ez*Sp))")
-problem.add_equation("dt(Sp) - (tau/Pe)*lap(Sp) - Rp*up@ez = - up@grad(Sm)-um@grad(Sp)-up@grad(Sp)+dz(h_mean(up@ez*Sp))")
+problem.add_equation("dt(Sm) - (tau/Pe)*lap(Sm) - Rp*um@ez = - dz(h_mean((up@ez)*Sp))")
+problem.add_equation("dt(Sp) - (tau/Pe)*lap(Sp) - Rp*up@ez = - up@grad(Sm)-um@grad(Sp)-up@grad(Sp)+dz(h_mean((up@ez)*Sp))")
 
 # timestepper = d3.RK443
 timestepper = d3.RK222
@@ -156,7 +156,9 @@ CFL.add_velocity(U)
 xg = xbasis.global_grid(dist, scale=dealias)
 zg = zbasis.global_grid(dist, scale=dealias)
 # Tmg = Tm.allgather_data('g')
-
+umg = um.allgather_data('g')
+# if dist.comm.rank == 0:
+#     print(np.copy(umg[0]))
 # Main loop
 oldtime = 0.
 try:
@@ -169,7 +171,12 @@ try:
             ########################### <--- plot instantaneous temperature distribution
             Tg = Tm.allgather_data('g')+Tp.allgather_data('g')
             Sg = Sm.allgather_data('g')+Sp.allgather_data('g')
+            umg = um.allgather_data('g')
             if dist.comm.rank == 0:
+                plt.figure(figsize=(3,3))
+                plt.plot(umg[0].T,np.linspace(0,1.,int(Nz*dealias)))
+                plt.savefig('fluc/um_time={:010.3f}.png'.format(solver.sim_time), bbox_inches='tight')
+                plt.close()
                 # plot temperature distribution
                 plt.figure(figsize=(10,3))
                 plt.pcolormesh(xg.ravel(),zg.ravel(),Tg.transpose(),cmap='jet')
