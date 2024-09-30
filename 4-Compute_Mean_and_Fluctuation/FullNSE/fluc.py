@@ -68,13 +68,6 @@ tau_pp = dist.Field(name='tau_pp')
 # tau_wm = dist.Field(name='tau_wm') 
 # because this term is only a contant added to the equation, we don't need to instantiate it for bases system
 
-# grad_te = d3.grad(te) # First-order reduction
-# grad_sa = d3.grad(sa) # First-order reduction
-# grad_u = d3.grad(u) # First-order reduction
-
-# lap_u = d3.div(grad_u)
-# lap_te = d3.div(grad_te)
-# lap_sa = d3.div(grad_sa)
 # First-order form: "div(A)" becomes "trace(grad_A)"
 
 # grad = lambda A: d3.grad(A)
