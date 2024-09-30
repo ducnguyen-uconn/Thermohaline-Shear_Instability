@@ -46,8 +46,6 @@ pm = dist.Field(name='pm', bases=(zbasis)) # pressure
 pp = dist.Field(name='pp', bases=(xbasis,zbasis)) # pressure
 um = dist.VectorField(coords,name='um', bases=(zbasis)) # mean u(z)
 up = dist.VectorField(coords,name='up', bases=(xbasis,zbasis)) # fluctuation u'(x,z)
-# wm = dist.Field(name='wm', bases=(zbasis)) # mean w(z)
-# wp = dist.Field(name='wp', bases=(xbasis,zbasis)) # fluctuation w'(x,z)
 Sm = dist.Field(name='Sm', bases=(zbasis)) # mean S(z)
 Sp = dist.Field(name='Sp', bases=(xbasis,zbasis)) # fluctuation S'(x,z)
 Tm = dist.Field(name='Tm', bases=(zbasis)) # mean T(z)
@@ -65,7 +63,6 @@ S = Sm + Sp # full salinity
 # create constant sub-field for incompressible flow condition's equation
 tau_pm = dist.Field(name='tau_pm') 
 tau_pp = dist.Field(name='tau_pp') 
-# tau_wm = dist.Field(name='tau_wm') 
 # because this term is only a contant added to the equation, we don't need to instantiate it for bases system
 
 # First-order form: "div(A)" becomes "trace(grad_A)"
@@ -74,7 +71,10 @@ tau_pp = dist.Field(name='tau_pp')
 lap = lambda A: d3.div(d3.grad(A)) # First-order form: "lap(f)" becomes "div(grad_f)"
 dx = lambda A: d3.Differentiate(A, coords['x']) 
 dz = lambda A: d3.Differentiate(A, coords['z']) 
-h_mean = lambda A: d3.Integrate(A,'x')/Lx         # Horizontal mean of A
+# vol_avg = lambda A: d3.Integrate(A)/(Nx*Nz)         # Horizontal mean of A 
+vol_avg = lambda A: d3.Average(A)         # Horizontal mean of A 
+# h_mean = lambda A: d3.Integrate(A,'x')/Nx         # Horizontal mean of A
+h_mean = lambda A: d3.Average(A,'x')         # Horizontal mean of A
 
 Ubg['g'] = np.sin(2*pi*z)
 
@@ -89,14 +89,14 @@ problem.add_equation("trace(grad(up))+tau_pp = 0")
 problem.add_equation("integ(pm) = 0") # Pressure gauge
 problem.add_equation("integ(pp) = 0") # Pressure gauge
 
-problem.add_equation("dt(um) + Ubg*dx(um) + (um@ez)*dz(Ubg)*ex + grad(pm) - (Pr/Pe)*lap(um) - (4*pi*pi*Ri/(Rp-1))*(Tm-Sm)*ez = - dz(h_mean((up@ez)*up))")
-problem.add_equation("dt(up) + Ubg*dx(up) + (up@ez)*dz(Ubg)*ex + grad(pp) - (Pr/Pe)*lap(up) - (4*pi*pi*Ri/(Rp-1))*(Tp-Sp)*ez = - up@grad(um)-um@grad(up)-up@grad(up)+dz(h_mean((up@ez)*up))")
+problem.add_equation("dt(um) + grad(pm) - (Pr/Pe)*lap(um) - (4*pi*pi*Ri/(Rp-1))*(Tm-Sm)*ez = - dz(h_mean(up@ez*up))")
+problem.add_equation("dt(up) + Ubg*dx(up) + up@ez*dz(Ubg)*ex + grad(pp) - (Pr/Pe)*lap(up) - (4*pi*pi*Ri/(Rp-1))*(Tp-Sp)*ez = - up@grad(um)-um@grad(up)-up@grad(up)+dz(h_mean(up@ez*up))")
 
-problem.add_equation("dt(Tm) - (1./Pe)*lap(Tm) - um@ez = - dz(h_mean((up@ez)*Tp))")
-problem.add_equation("dt(Tp) - (1./Pe)*lap(Tp) - up@ez = - up@grad(Tm)-um@grad(Tp)-up@grad(Tp)+dz(h_mean((up@ez)*Tp))")
+problem.add_equation("dt(Tm)              - (1./Pe)*dz(dz(Tm))      = - dz(h_mean(up@ez*Tp))")
+problem.add_equation("dt(Tp) + Ubg*dx(Tp) - (1./Pe)*lap(Tp) - up@ez = - up@grad(Tm)-um@grad(Tp)-up@grad(Tp)+dz(h_mean(up@ez*Tp))")
 
-problem.add_equation("dt(Sm) - (tau/Pe)*lap(Sm) - Rp*um@ez = - dz(h_mean((up@ez)*Sp))")
-problem.add_equation("dt(Sp) - (tau/Pe)*lap(Sp) - Rp*up@ez = - up@grad(Sm)-um@grad(Sp)-up@grad(Sp)+dz(h_mean((up@ez)*Sp))")
+problem.add_equation("dt(Sm)             - (tau/Pe)*dz(dz(Sm))           = - dz(h_mean((up@ez)*Sp))")
+problem.add_equation("dt(Sp) + Ubg*dx(Sp) - (tau/Pe)*lap(Sp) - Rp*(up@ez) = - up@grad(Sm)-um@grad(Sp)-up@grad(Sp)+dz(h_mean((up@ez)*Sp))")
 
 # timestepper = d3.RK443
 timestepper = d3.RK222
@@ -107,13 +107,13 @@ solver.stop_sim_time = stop_sim_time
 
 # Initial conditions
 if not restart:
-    pm.fill_random('g', seed=42, distribution='normal', scale=1e-4) # Random noise
+    # pm.fill_random('g', seed=42, distribution='normal', scale=1e-4) # Random noise
     pp.fill_random('g', seed=42, distribution='normal', scale=1e-4) # Random noise
-    um.fill_random('g', seed=42, distribution='normal', scale=1e-4) # Random noise
+    # um.fill_random('g', seed=42, distribution='normal', scale=1e-4) # Random noise
     up.fill_random('g', seed=42, distribution='normal', scale=1e-4) # Random noise
-    Tm.fill_random('g', seed=42, distribution='normal', scale=1e-4) # Random noise
+    # Tm.fill_random('g', seed=42, distribution='normal', scale=1e-4) # Random noise
     Tp.fill_random('g', seed=42, distribution='normal', scale=1e-4) # Random noise
-    Sm.fill_random('g', seed=42, distribution='normal', scale=1e-4) # Random noise
+    # Sm.fill_random('g', seed=42, distribution='normal', scale=1e-4) # Random noise
     Sp.fill_random('g', seed=42, distribution='normal', scale=1e-4) # Random noise
     file_handler_mode = 'overwrite'
     initial_timestep = 0.02
