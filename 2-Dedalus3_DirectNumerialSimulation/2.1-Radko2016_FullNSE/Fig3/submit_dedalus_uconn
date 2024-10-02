@@ -1,0 +1,30 @@
+#!/bin/bash
+### SBATCH --partition=debug
+###SBATCH --partition=general
+### SBATCH --partition=lo-core # This can be as long as 7 days
+#SBATCH --partition=priority
+#SBATCH --account=chl23026      # chl23026
+#SBATCH --qos=chl23026          # chl23026, me_epyc
+###SBATCH --constraint=epyc128 # This is optional
+#SBATCH --nodes=1
+#SBATCH --ntasks=96
+#SBATCH --time=7-00:00:00
+#SBATCH --mail-user=duc.nguyen@uconn.edu      # Destination email address
+#SBATCH --mail-type=ALL                       # Event(s) that triggers email notification
+#SBATCH --job-name=dedalus_job
+#SBATCH --output=dedalus_output_%j
+export SLURM_EXPORT_ENV=ALL
+#export I_MPI_FABRICS=shm,tcp
+
+##the slurm number to restart simulation... This need full state to be stored.
+SUBMITDIR=$SLURM_SUBMIT_DIR
+WORKDIR=/scratch/chl23026/jms24002/dedalus_$SLURM_JOB_ID
+mkdir -p "$WORKDIR" && cp -r *.py "$WORKDIR" && cp submit_dedalus_uconn "$WORKDIR" && cd "$WORKDIR" || exit -1
+
+source activate base
+conda activate dedalus3
+mpiexec -n $SLURM_NTASKS python3 Fig3.py --restart
+
+
+cd "$SUBMITDIR" && cp dedalus_output_$SLURM_JOB_ID "$WORKDIR"
+

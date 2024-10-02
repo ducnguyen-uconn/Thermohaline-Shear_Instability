@@ -1,0 +1,1 @@
+This repository is example code of Direct Numerical Simulation (DNS) and Linear Stability Analysis for several softwares, including Matlab, Dedalus, Channelflow, pde2path,... This is writen by [Duc Nguyen](https://sites.google.com/view/ducnv-info) - PhD student at University of Connecticut. Pls contact to email duc.nguyen@uconn.edu for any question.
