@@ -78,7 +78,7 @@ then we can get fields easily as `U` or `p` instead of calling `fields[0]` for v
 
 |Convenience form         | Preferred form  | Meaning  |
 |:----------------|:-----------|:-----------|
-| FlowField g = xdiff(f) | xdiff(f,g) | $\boldsymbol{g} = \partial \boldsymbol{f} /\partial x$ |
+| FlowField g = xdiff(f) | xdiff(f,g) | $\bold{g} = \partial \bold{f} /\partial x$ |
 | FlowField g = xdiff(f,n) | xdiff(f,g,n) | $\boldsymbol{g}  = \partial^n \boldsymbol{f}/\partial x^n$  |
 | FlowField g = ydiff(f) | ydiff(f,g) | $\boldsymbol{g}  = \partial \boldsymbol{f}/\partial y$ |
 | FlowField g = ydiff(f,n) | ydiff(f,g,n) | $\boldsymbol{g}  = \partial^n \boldsymbol{f}/\partial y^n$ |
