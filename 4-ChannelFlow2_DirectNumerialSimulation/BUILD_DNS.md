@@ -79,21 +79,21 @@ then we can get fields easily as `U` or `p` instead of calling `fields[0]` for v
 |Convenience form         | Preferred form  | Meaning  |
 |:----------------|:-----------|:-----------|
 | FlowField g = xdiff(f) | xdiff(f,g) | $\vec{g} = \partial \vec{f} /\partial x$ |
-| FlowField g = xdiff(f,n) | xdiff(f,g,n) | $\boldsymbol{g}  = \partial^n \boldsymbol{f}/\partial x^n$  |
-| FlowField g = ydiff(f) | ydiff(f,g) | $\boldsymbol{g}  = \partial \boldsymbol{f}/\partial y$ |
-| FlowField g = ydiff(f,n) | ydiff(f,g,n) | $\boldsymbol{g}  = \partial^n \boldsymbol{f}/\partial y^n$ |
-| FlowField g = zdiff(f) | zdiff(f,g) | $\boldsymbol{g}  = \partial \boldsymbol{f}/\partial z$ |
-| FlowField g = zdiff(f,n) | zdiff(f,g,n) | $\boldsymbol{g}  = \partial^n \boldsymbol{f}/\partial z^n$  |
-| FlowField g = xdiff(f,m,n,p) | diff(f,g,m,n,p) | $\boldsymbol{g}  = \partial^{m+n+p} \boldsymbol{f}/\partial x^m \partial y^n \partial z^p$ |
-| FlowField g = grad(f) | grad(f,g) | $g = \nabla f$, $g_i=\partial f/\partial x_i$ for 1d $f$  and  $\boldsymbol{g} = \nabla \boldsymbol{f}$, $g_{ij} = \partial f_j/\partial x_i$, for 3d $f$  |
-| FlowField g = lapl(f) | lapl(f,g) | $\boldsymbol{g}  = \nabla^2 \boldsymbol{f}$ |
-| FlowField g = div(f) | div(f,g) | $g  = \nabla \cdot \boldsymbol{f}$ |
-| FlowField g = curl(f) | curl(f,g) | $\boldsymbol{g}  = \nabla \times \boldsymbol{f}$ |
-| FlowField g = norm(f) | norm(f,g) | $\boldsymbol{g}  = \|\|\boldsymbol{f}\|\|$ |
-| FlowField g = norm2(f) | norm2(f,g) | $\boldsymbol{g}  = \|\|\boldsymbol{f}\|\|^2$ |
-| FlowField g = energy(f) | energy(f,g) | $\boldsymbol{g}  =\frac{1}{2} \|\|\boldsymbol{f}\|\|^2$ |
-| FlowField g = cross(f) | cross(f,h,g) | $\boldsymbol{g}  = \boldsymbol{f} \times \boldsymbol{h}$ |
-| FlowField g = dot(f) | dot(f,h,g) | $g =\boldsymbol{f} \cdot \boldsymbol{h}$ |
+| FlowField g = xdiff(f,n) | xdiff(f,g,n) | $\vec{g}  = \partial^n \vec{f}/\partial x^n$  |
+| FlowField g = ydiff(f) | ydiff(f,g) | $\vec{g}  = \partial \vec{f}/\partial y$ |
+| FlowField g = ydiff(f,n) | ydiff(f,g,n) | $\vec{g}  = \partial^n \vec{f}/\partial y^n$ |
+| FlowField g = zdiff(f) | zdiff(f,g) | $\vec{g}  = \partial \vec{f}/\partial z$ |
+| FlowField g = zdiff(f,n) | zdiff(f,g,n) | $\vec{g}  = \partial^n \vec{f}/\partial z^n$  |
+| FlowField g = xdiff(f,m,n,p) | diff(f,g,m,n,p) | $\vec{g}  = \partial^{m+n+p} \vec{f}/\partial x^m \partial y^n \partial z^p$ |
+| FlowField g = grad(f) | grad(f,g) | $g = \nabla f$, $g_i=\partial f/\partial x_i$ for 1d $f$  and  $\vec{g} = \nabla \vec{f}$, $g_{ij} = \partial f_j/\partial x_i$, for 3d $f$  |
+| FlowField g = lapl(f) | lapl(f,g) | $\vec{g}  = \nabla^2 \vec{f}$ |
+| FlowField g = div(f) | div(f,g) | $g  = \nabla \cdot \vec{f}$ |
+| FlowField g = curl(f) | curl(f,g) | $\vec{g}  = \nabla \times \vec{f}$ |
+| FlowField g = norm(f) | norm(f,g) | $\vec{g}  = \|\|\vec{f}\|\|$ |
+| FlowField g = norm2(f) | norm2(f,g) | $\vec{g}  = \|\|\vec{f}\|\|^2$ |
+| FlowField g = energy(f) | energy(f,g) | $\vec{g}  =\frac{1}{2} \|\|\vec{f}\|\|^2$ |
+| FlowField g = cross(f) | cross(f,h,g) | $\vec{g}  = \vec{f} \times \vec{h}$ |
+| FlowField g = dot(f) | dot(f,h,g) | $g =\vec{f} \cdot \vec{h}$ |
 | FlowField g = outer(f) | outer(f,h,g) | $g_{ij} = f_i h_j$ |
     
 
