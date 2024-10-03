@@ -99,18 +99,18 @@ then we can get fields easily as `U` or `p` instead of calling `fields[0]` for v
 
 |Convenience form         | Meaning  |
 |:------------------------|:-----------------------------------|
-| Real r = L2Norm2(f) | $ r = \frac{1}{L_x L_y L_z} \int_0^{L_x} \int_0^{L_y} \int_0^{L_z} f \cdot f \, dx \, dy \, dz $ |
-| Real r = L2Norm(f) | $ r = \sqrt{\text{L2Norm2}(f)} $ |
-| Real r = L2Dist2(f, g) | $ r = \text{L2Norm2}(f - g) $ |
-| Real r = L2Dist(f, g) | $ r = \text{L2Norm}(f - g) $ |
-| Real r = bcNorm2(f) | $ r = \frac{1}{L_x L_z} \int_0^{L_x} \int_0^{L_z} \left(f \cdot f \|_{y=0} + f \cdot f \|_{y=L_y} \right) dx dz $ |
-| Real r = bcNorm(f) | $ r = \sqrt{\text{bcNorm2}(f)} $ |
-| Real r = bcDist2(f, g) | $ r = \text{bcNorm2}(f - g) $ |
-| Real r = bcDist(f, g) | $ r = \text{bcNorm}(f - g) $ |
-| Real r = divNorm2(f) | $ r = \text{L2Norm2}(\nabla \cdot f) $ |
-| Real r = divNorm(f) | $ r = \sqrt{\text{divNorm2}(f)} $ |
-| Real r = divL2Dist2(f, g) | $ r = \text{divNorm2}(f - g) $ |
-| Real r = divL2Dist(f, g) | $ r = \text{divNorm}(f - g) $ |
+| Real r = L2Norm2(f) | $r = \frac{1}{L_x L_y L_z} \int_0^{L_x} \int_0^{L_y} \int_0^{L_z} f \cdot f \, dx \, dy \, dz$ |
+| Real r = L2Norm(f) | $r = \sqrt{\text{L2Norm2}(f)}$ |
+| Real r = L2Dist2(f, g) | $r = \text{L2Norm2}(f - g)$ |
+| Real r = L2Dist(f, g) | $r = \text{L2Norm}(f - g)$ |
+| Real r = bcNorm2(f) | $r = \frac{1}{L_x L_z} \int_0^{L_x} \int_0^{L_z} \left(f \cdot f \|_{y=0} + f \cdot f \|_{y=L_y} \right) dx dz$ |
+| Real r = bcNorm(f) | $r = \sqrt{\text{bcNorm2}(f)}$ |
+| Real r = bcDist2(f, g) | $r = \text{bcNorm2}(f - g)$ |
+| Real r = bcDist(f, g) | $r = \text{bcNorm}(f - g)$ |
+| Real r = divNorm2(f) | $r = \text{L2Norm2}(\nabla \cdot f)$ |
+| Real r = divNorm(f) | $r = \sqrt{\text{divNorm2}(f)}$ |
+| Real r = divL2Dist2(f, g) | $r = \text{divNorm2}(f - g)$ |
+| Real r = divL2Dist(f, g) | $r = \text{divNorm}(f - g)$ |
 
 ### Initial conditions
 ```cpp
