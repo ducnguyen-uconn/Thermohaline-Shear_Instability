@@ -74,11 +74,11 @@ For convernience, we can define some macros for variables before the main functi
 ```
 then we can get fields easily as `U` or `p` instead of calling `fields[0]` for velocity or `fields[1]` for pressure.
 
-### Differential operators
+### Differential operators and norms
 
 |Convenience form         | Preferred form  | Meaning  |
 |:----------------|:-----------|:-----------|
-| FlowField g = xdiff(f) | xdiff(f,g) | $\mathbf{g} = \partial \mathbf{f} /\partial x$ |
+| FlowField g = xdiff(f) | xdiff(f,g) | $\vec{g} = \partial \vec{f} /\partial x$ |
 | FlowField g = xdiff(f,n) | xdiff(f,g,n) | $\boldsymbol{g}  = \partial^n \boldsymbol{f}/\partial x^n$  |
 | FlowField g = ydiff(f) | ydiff(f,g) | $\boldsymbol{g}  = \partial \boldsymbol{f}/\partial y$ |
 | FlowField g = ydiff(f,n) | ydiff(f,g,n) | $\boldsymbol{g}  = \partial^n \boldsymbol{f}/\partial y^n$ |
