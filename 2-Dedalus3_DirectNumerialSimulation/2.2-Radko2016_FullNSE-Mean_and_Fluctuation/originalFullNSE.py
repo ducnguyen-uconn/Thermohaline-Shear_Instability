@@ -25,7 +25,7 @@ Rp, Ri, Pe, tau = 2., 10., 1e2, 0.01 # figure 4
 Pr = 10.  # Prandtl number
 Lx, Lz = 64., 1.
 Nx, Nz = 384, 192
-stop_sim_time = 100 + 300*restart # Stopping criteria
+stop_sim_time = 600 + 300*restart # Stopping criteria
 # Bases
 coords = d3.CartesianCoordinates('x','z')
 dist = d3.Distributor(coords, dtype=np.float64)
@@ -124,7 +124,7 @@ try:
     while solver.proceed:
         timestep = CFL.compute_timestep()
         solver.step(timestep)  
-        if (solver.iteration-1) % 1000 == 0:
+        if (solver.iteration-1) % 5000 == 0:
             logger.info('Completed iteration {}, time={:.3f}, dt={:.10f}'.format(solver.iteration, solver.sim_time, timestep))        
             ########################### <--- plot instantaneous temperature distribution
             Tg = te.allgather_data('g')
