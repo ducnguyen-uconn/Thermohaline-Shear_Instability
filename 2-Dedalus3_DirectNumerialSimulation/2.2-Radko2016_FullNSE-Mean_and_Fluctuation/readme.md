@@ -23,16 +23,21 @@ $$\partial_t w + sin(2\pi z)\partial_x w + \boldsymbol{u}\cdot\nabla w = -\parti
 $$\partial_t T + sin(2\pi z)\partial_x T + \boldsymbol{u}\cdot\nabla T - w = \frac{1}{Pe}\nabla^2 T,$$
 
 $$\partial_t S + sin(2\pi z)\partial_x S + \boldsymbol{u}\cdot\nabla S - R_\rho w = \frac{\tau}{Pe}\nabla^2 S.$$
+
 Now, we decompose perturbations of velocity, pressure, temperature, and salinity fields into two components: mean and fluctuation quantities.
-$$\boldsymbol{u} = \bar{\boldsymbol{u}}+\boldsymbol{u}'$$
+
+$$u = \bar{u}+u'$$
+
+$$w = \bar{w}+w' = w', (\bar{w}=0)$$
 
 $$p = \bar{p}+p',$$
 
-$$T = \bar{T}+T',$$
+$T = \bar{T}+T',$
 
-$$S = \bar{S}+S'.$$
+$S = \bar{S}+S'.$
 
 Then, we have
+
 $$
 \boldsymbol{\bar{u}}\cdot\nabla\boldsymbol{\bar{u}} = 0,\\
 <\boldsymbol{u}'\cdot\nabla\boldsymbol{\bar{u}}>_h = <\boldsymbol{u}'>_h\cdot\nabla\boldsymbol{\bar{u}} = 0,\\
