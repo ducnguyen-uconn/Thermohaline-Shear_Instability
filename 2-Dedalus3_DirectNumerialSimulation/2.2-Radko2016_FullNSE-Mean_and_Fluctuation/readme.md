@@ -26,14 +26,10 @@ $$\partial_t S + sin(2\pi z)\partial_x S + \vec{u}\cdot\nabla S - R_\rho w = \fr
 
 Now, we decompose perturbations of velocity, pressure, temperature, and salinity fields into two components: mean and fluctuation quantities.
 
-$$u = \bar{u}+u'$$
-
-$$w = \bar{w}+w' = w', (\bar{w}=0)$$
-
-$$p = \bar{p}+p',$$
-
+$u = \bar{u}+u'$
+$w = \bar{w}+w' = w', (\bar{w}=0)$
+$p = \bar{p}+p',$
 $T = \bar{T}+T',$
-
 $S = \bar{S}+S'.$
 
 Then, we have
@@ -46,6 +42,7 @@ $$
 $$
 
 and 
+
 $$
 \vec{\bar{u}}\cdot\nabla\vec{\bar{T}} = 0,\\
 <\vec{u}'\cdot\nabla\vec{\bar{T}}>_h = <\vec{u}'>_h\cdot\nabla\vec{\bar{T}} = 0,\\
