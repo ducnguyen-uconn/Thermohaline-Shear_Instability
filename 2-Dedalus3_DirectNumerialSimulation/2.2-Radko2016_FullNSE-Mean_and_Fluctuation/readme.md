@@ -2,7 +2,9 @@ Governing equations ([Radko, 2016](https://doi.org/10.1017/jfm.2016.547)) for pe
 
 $$\nabla\cdot \vec{u} = 0$$
 
-$$\partial_t \vec{u} + U_{bg}\partial_x\vec{u} + w\partial_z U_{bg}\vec{e}_x + \vec{u}\cdot\nabla\vec{u} = -\nabla p + \frac{Pr}{Pe}\nabla^2\vec{u} + \frac{4\pi^2 Ri}{R_\rho-1}(T-S)\vec{e}_z,$$
+$$\partial_t \vec{u} + U_{bg}\partial_x\vec{u} + w\partial_z U_{bg}\vec{e}_x + \vec{u}\cdot\nabla\vec{u}$$
+
+$$= -\nabla p + \frac{Pr}{Pe}\nabla^2\vec{u} + \frac{4\pi^2 Ri}{R_\rho-1}(T-S)\vec{e}_z,$$
 
 $$\partial_t T + U_{bg}\partial_x T + \vec{u}\cdot\nabla T - w = \frac{1}{Pe}\nabla^2 T,$$
 
@@ -104,11 +106,11 @@ $$
 This equation can be called equation of the horizontally averaged velocity component
 Now, we can take the equation of fluctuation = the original momentum equation - horizontally averaged equation
 
-$$
-    \partial_t \vec{u}'+ U_{bg}\partial_x\vec{u}' + \partial_z U_{bg}w'\vec{e}_x
+$$\partial_t \vec{u}'+ U_{bg}\partial_x\vec{u}' + \partial_z U_{bg}w'\vec{e}_x
     + \vec{u}'\cdot\nabla\vec{\bar{u}} + \vec{\bar{u}}\cdot\nabla\vec{u}' + \vec{u}'\cdot\nabla\vec{u}'
-    - \langle\vec{u}'\cdot\nabla\vec{u}'\rangle_h
-    = -\nabla p' + \frac{Pr}{Pe}\nabla^2\vec{u}' + \frac{4\pi^2 Ri}{R_\rho-1}(T'-S')\vec{e}_z,
+    - \langle\vec{u}'\cdot\nabla\vec{u}'\rangle_h$$
+
+$$= -\nabla p' + \frac{Pr}{Pe}\nabla^2\vec{u}' + \frac{4\pi^2 Ri}{R_\rho-1}(T'-S')\vec{e}_z,
 $$
 
 And,
@@ -164,11 +166,13 @@ Then, we have
 $$
     \partial_t \vec{\bar{u}}
     + \partial_z \langle w'\vec{u}'\rangle_h
-    = -\nabla\langle p\rangle_h + \frac{Pr}{Pe}\nabla^2\vec{\bar{u}} + \frac{4\pi^2 Ri}{R_\rho-1}(\bar{T}-\bar{S})\vec{e}_z,\\
-    \partial_t \vec{u}'+ U_{bg}\partial_x\vec{u}' + \partial_z U_{bg}w'\vec{e}_x
+    = -\nabla\langle p\rangle_h + \frac{Pr}{Pe}\nabla^2\vec{\bar{u}} + \frac{4\pi^2 Ri}{R_\rho-1}(\bar{T}-\bar{S})\vec{e}_z,$$
+
+$$\partial_t \vec{u}'+ U_{bg}\partial_x\vec{u}' + \partial_z U_{bg}w'\vec{e}_x
     + \vec{u}'\cdot\nabla\vec{\bar{u}} + \vec{\bar{u}}\cdot\nabla\vec{u}' + \vec{u}'\cdot\nabla\vec{u}'
-    - \partial_z \langle w'\vec{u}'\rangle_h
-    = -\nabla (p-\langle p\rangle_h) + \frac{Pr}{Pe}\nabla^2\vec{u}' + \frac{4\pi^2 Ri}{R_\rho-1}(T'-S')\vec{e}_z,$$
+    - \partial_z \langle w'\vec{u}'\rangle_h$$
+
+$$= -\nabla (p-\langle p\rangle_h) + \frac{Pr}{Pe}\nabla^2\vec{u}' + \frac{4\pi^2 Ri}{R_\rho-1}(T'-S')\vec{e}_z,$$
 
 The temperature equation:
 
