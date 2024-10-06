@@ -76,18 +76,21 @@ $$
 
 The momentum equation can becomes
 
-$$\partial_t (\vec{\bar{u}}+\vec{u}') + U_{bg}\partial_x(\vec{\bar{u}}+\vec{u}') + \partial_z U_{bg} (\bar{w}+w')\vec{e}_x + (\vec{\bar{u}}+\vec{u}')\cdot\nabla(\vec{\bar{u}}+\vec{u}') = -\nabla p + \frac{Pr}{Pe}\nabla^2(\vec{\bar{u}}+\vec{u}') + \frac{4\pi^2 Ri}{R_\rho-1}((\bar{T}+T')-(\bar{S}+S'))\vec{e}_z,$$
+$$\partial_t (\vec{\bar{u}}+\vec{u}') + U_{bg}\partial_x(\vec{\bar{u}}+\vec{u}') + \partial_z U_{bg} (\bar{w}+w')\vec{e}_x + (\vec{\bar{u}}+\vec{u}')\cdot\nabla(\vec{\bar{u}}+\vec{u}')$$ 
+
+$$= -\nabla p + \frac{Pr}{Pe}\nabla^2(\vec{\bar{u}}+\vec{u}') + \frac{4\pi^2 Ri}{R_\rho-1}((\bar{T}+T')-(\bar{S}+S'))\vec{e}_z,$$
 
 $$\Leftrightarrow 
-    \partial_t (\vec{\bar{u}}+\vec{u}')+ U_{bg}\partial_x\vec{u}' + \partial_z U_{bg}w'\vec{e}_x
-    + \vec{\bar{u}}\cdot\nabla\vec{\bar{u}} + \vec{u}'\cdot\nabla\vec{\bar{u}} + \vec{\bar{u}}\cdot\nabla\vec{u}' + \vec{u}'\cdot\nabla\vec{u}'
-    = -\nabla p + \frac{Pr}{Pe}\nabla^2(\vec{\bar{u}}+\vec{u}') + \frac{4\pi^2 Ri}{R_\rho-1}((\bar{T}-\bar{S})+(T'-S'))\vec{e}_z,$$
+    \partial_t (\vec{\bar{u}}+\vec{u}')+ U_{bg}\partial_x\vec{u}' + \partial_z U_{bg}w'\vec{e}_{x}
+    + \vec{\bar{u}}\cdot\nabla\vec{\bar{u}} + \vec{u}'\cdot\nabla\vec{\bar{u}} + \vec{\bar{u}}\cdot\nabla\vec{u}' + \vec{u}'\cdot\nabla\vec{u}'$$
+
+$$= -\nabla p + \frac{Pr}{Pe}\nabla^2(\vec{\bar{u}}+\vec{u}') + \frac{4\pi^2 Ri}{R_\rho-1}((\bar{T}-\bar{S})+(T'-S'))\vec{e}_z,$$
 
 then we horizontally average this equation, and get
 
 $$
     \langle\partial_t (\vec{\bar{u}}+\vec{u}')\rangle_h
-    + \langleU_{bg}\partial_x\vec{u}'\rangle_h + \langle\partial_z U_{bg}w'\vec{e}_x\rangle_h
+    + \langle U_{bg}\partial_x\vec{u}'\rangle_h + \langle\partial_z U_{bg}w'\vec{e}_x\rangle_h
     + \langle\vec{\bar{u}}\cdot\nabla\vec{\bar{u}}\rangle_h + \langle\vec{u}'\cdot\nabla\vec{\bar{u}}\rangle_h + \langle\vec{\bar{u}}\cdot\nabla\vec{u}'\rangle_h + \langle\vec{u}'\cdot\nabla\vec{u}'\rangle_h$$
 
 $$= -\nabla \langle p\rangle_h + \langle\frac{Pr}{Pe}\nabla^2(\vec{\bar{u}}+\vec{u}')\rangle_h + \langle\frac{4\pi^2 Ri}{R_\rho-1}((\bar{T}-\bar{S})+(T'-S'))\vec{e}_z\rangle_h,$$
