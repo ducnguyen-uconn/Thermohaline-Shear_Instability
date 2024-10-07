@@ -1,0 +1,704 @@
+Traceback (most recent call last):
+  File "/gpfs/scratchfs1/chl23026/jms24002/dedalus_2423658/fluc.py", line 91, in <module>
+Traceback (most recent call last):
+  File "/gpfs/scratchfs1/chl23026/jms24002/dedalus_2423658/fluc.py", line 91, in <module>
+Traceback (most recent call last):
+  File "/gpfs/scratchfs1/chl23026/jms24002/dedalus_2423658/fluc.py", line 91, in <module>
+Traceback (most recent call last):
+  File "/gpfs/scratchfs1/chl23026/jms24002/dedalus_2423658/fluc.py", line 91, in <module>
+Traceback (most recent call last):
+  File "/gpfs/scratchfs1/chl23026/jms24002/dedalus_2423658/fluc.py", line 91, in <module>
+Traceback (most recent call last):
+  File "/gpfs/scratchfs1/chl23026/jms24002/dedalus_2423658/fluc.py", line 91, in <module>
+Traceback (most recent call last):
+  File "/gpfs/scratchfs1/chl23026/jms24002/dedalus_2423658/fluc.py", line 91, in <module>
+Traceback (most recent call last):
+  File "/gpfs/scratchfs1/chl23026/jms24002/dedalus_2423658/fluc.py", line 91, in <module>
+Traceback (most recent call last):
+  File "/gpfs/scratchfs1/chl23026/jms24002/dedalus_2423658/fluc.py", line 91, in <module>
+Traceback (most recent call last):
+  File "/gpfs/scratchfs1/chl23026/jms24002/dedalus_2423658/fluc.py", line 91, in <module>
+Traceback (most recent call last):
+  File "/gpfs/scratchfs1/chl23026/jms24002/dedalus_2423658/fluc.py", line 91, in <module>
+Traceback (most recent call last):
+  File "/gpfs/scratchfs1/chl23026/jms24002/dedalus_2423658/fluc.py", line 91, in <module>
+Traceback (most recent call last):
+  File "/gpfs/scratchfs1/chl23026/jms24002/dedalus_2423658/fluc.py", line 91, in <module>
+Traceback (most recent call last):
+  File "/gpfs/scratchfs1/chl23026/jms24002/dedalus_2423658/fluc.py", line 91, in <module>
+Traceback (most recent call last):
+  File "/gpfs/scratchfs1/chl23026/jms24002/dedalus_2423658/fluc.py", line 91, in <module>
+Traceback (most recent call last):
+  File "/gpfs/scratchfs1/chl23026/jms24002/dedalus_2423658/fluc.py", line 91, in <module>
+Traceback (most recent call last):
+  File "/gpfs/scratchfs1/chl23026/jms24002/dedalus_2423658/fluc.py", line 91, in <module>
+Traceback (most recent call last):
+  File "/gpfs/scratchfs1/chl23026/jms24002/dedalus_2423658/fluc.py", line 91, in <module>
+Traceback (most recent call last):
+  File "/gpfs/scratchfs1/chl23026/jms24002/dedalus_2423658/fluc.py", line 91, in <module>
+    problem.add_equation("grad(h_mean(p)) - (Pr/Pe)*lap(um) - (4*pi*pi*Ri/(Rp-1))*(Tm-Sm)*ez + tau_um= 0")
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/problems.py", line 75, in add_equation
+    problem.add_equation("grad(h_mean(p)) - (Pr/Pe)*lap(um) - (4*pi*pi*Ri/(Rp-1))*(Tm-Sm)*ez + tau_um= 0")
+    problem.add_equation("grad(h_mean(p)) - (Pr/Pe)*lap(um) - (4*pi*pi*Ri/(Rp-1))*(Tm-Sm)*ez + tau_um= 0")
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/problems.py", line 75, in add_equation
+    problem.add_equation("grad(h_mean(p)) - (Pr/Pe)*lap(um) - (4*pi*pi*Ri/(Rp-1))*(Tm-Sm)*ez + tau_um= 0")
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/problems.py", line 75, in add_equation
+    problem.add_equation("grad(h_mean(p)) - (Pr/Pe)*lap(um) - (4*pi*pi*Ri/(Rp-1))*(Tm-Sm)*ez + tau_um= 0")
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/problems.py", line 75, in add_equation
+    problem.add_equation("grad(h_mean(p)) - (Pr/Pe)*lap(um) - (4*pi*pi*Ri/(Rp-1))*(Tm-Sm)*ez + tau_um= 0")
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/problems.py", line 75, in add_equation
+Traceback (most recent call last):
+  File "/gpfs/scratchfs1/chl23026/jms24002/dedalus_2423658/fluc.py", line 91, in <module>
+    problem.add_equation("grad(h_mean(p)) - (Pr/Pe)*lap(um) - (4*pi*pi*Ri/(Rp-1))*(Tm-Sm)*ez + tau_um= 0")
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/problems.py", line 75, in add_equation
+    problem.add_equation("grad(h_mean(p)) - (Pr/Pe)*lap(um) - (4*pi*pi*Ri/(Rp-1))*(Tm-Sm)*ez + tau_um= 0")
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/problems.py", line 75, in add_equation
+    problem.add_equation("grad(h_mean(p)) - (Pr/Pe)*lap(um) - (4*pi*pi*Ri/(Rp-1))*(Tm-Sm)*ez + tau_um= 0")
+    problem.add_equation("grad(h_mean(p)) - (Pr/Pe)*lap(um) - (4*pi*pi*Ri/(Rp-1))*(Tm-Sm)*ez + tau_um= 0")
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/problems.py", line 75, in add_equation
+    problem.add_equation("grad(h_mean(p)) - (Pr/Pe)*lap(um) - (4*pi*pi*Ri/(Rp-1))*(Tm-Sm)*ez + tau_um= 0")
+    problem.add_equation("grad(h_mean(p)) - (Pr/Pe)*lap(um) - (4*pi*pi*Ri/(Rp-1))*(Tm-Sm)*ez + tau_um= 0")
+    problem.add_equation("grad(h_mean(p)) - (Pr/Pe)*lap(um) - (4*pi*pi*Ri/(Rp-1))*(Tm-Sm)*ez + tau_um= 0")
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/problems.py", line 75, in add_equation
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/problems.py", line 75, in add_equation
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/problems.py", line 75, in add_equation
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/problems.py", line 75, in add_equation
+    problem.add_equation("grad(h_mean(p)) - (Pr/Pe)*lap(um) - (4*pi*pi*Ri/(Rp-1))*(Tm-Sm)*ez + tau_um= 0")
+    problem.add_equation("grad(h_mean(p)) - (Pr/Pe)*lap(um) - (4*pi*pi*Ri/(Rp-1))*(Tm-Sm)*ez + tau_um= 0")
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/problems.py", line 75, in add_equation
+Traceback (most recent call last):
+Traceback (most recent call last):
+    problem.add_equation("grad(h_mean(p)) - (Pr/Pe)*lap(um) - (4*pi*pi*Ri/(Rp-1))*(Tm-Sm)*ez + tau_um= 0")
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/problems.py", line 75, in add_equation
+  File "/gpfs/scratchfs1/chl23026/jms24002/dedalus_2423658/fluc.py", line 91, in <module>
+  File "/gpfs/scratchfs1/chl23026/jms24002/dedalus_2423658/fluc.py", line 91, in <module>
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/problems.py", line 75, in add_equation
+    problem.add_equation("grad(h_mean(p)) - (Pr/Pe)*lap(um) - (4*pi*pi*Ri/(Rp-1))*(Tm-Sm)*ez + tau_um= 0")
+Traceback (most recent call last):
+  File "/gpfs/scratchfs1/chl23026/jms24002/dedalus_2423658/fluc.py", line 91, in <module>
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/problems.py", line 75, in add_equation
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/problems.py", line 75, in add_equation
+    problem.add_equation("grad(h_mean(p)) - (Pr/Pe)*lap(um) - (4*pi*pi*Ri/(Rp-1))*(Tm-Sm)*ez + tau_um= 0")
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/problems.py", line 75, in add_equation
+Traceback (most recent call last):
+  File "/gpfs/scratchfs1/chl23026/jms24002/dedalus_2423658/fluc.py", line 91, in <module>
+    problem.add_equation("grad(h_mean(p)) - (Pr/Pe)*lap(um) - (4*pi*pi*Ri/(Rp-1))*(Tm-Sm)*ez + tau_um= 0")
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/problems.py", line 75, in add_equation
+    problem.add_equation("grad(h_mean(p)) - (Pr/Pe)*lap(um) - (4*pi*pi*Ri/(Rp-1))*(Tm-Sm)*ez + tau_um= 0")
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/problems.py", line 75, in add_equation
+    problem.add_equation("grad(h_mean(p)) - (Pr/Pe)*lap(um) - (4*pi*pi*Ri/(Rp-1))*(Tm-Sm)*ez + tau_um= 0")
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/problems.py", line 75, in add_equation
+    problem.add_equation("grad(h_mean(p)) - (Pr/Pe)*lap(um) - (4*pi*pi*Ri/(Rp-1))*(Tm-Sm)*ez + tau_um= 0")
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/problems.py", line 75, in add_equation
+    problem.add_equation("grad(h_mean(p)) - (Pr/Pe)*lap(um) - (4*pi*pi*Ri/(Rp-1))*(Tm-Sm)*ez + tau_um= 0")
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/problems.py", line 75, in add_equation
+Traceback (most recent call last):
+  File "/gpfs/scratchfs1/chl23026/jms24002/dedalus_2423658/fluc.py", line 91, in <module>
+Traceback (most recent call last):
+  File "/gpfs/scratchfs1/chl23026/jms24002/dedalus_2423658/fluc.py", line 91, in <module>
+Traceback (most recent call last):
+  File "/gpfs/scratchfs1/chl23026/jms24002/dedalus_2423658/fluc.py", line 91, in <module>
+Traceback (most recent call last):
+  File "/gpfs/scratchfs1/chl23026/jms24002/dedalus_2423658/fluc.py", line 91, in <module>
+    problem.add_equation("grad(h_mean(p)) - (Pr/Pe)*lap(um) - (4*pi*pi*Ri/(Rp-1))*(Tm-Sm)*ez + tau_um= 0")
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/problems.py", line 75, in add_equation
+    problem.add_equation("grad(h_mean(p)) - (Pr/Pe)*lap(um) - (4*pi*pi*Ri/(Rp-1))*(Tm-Sm)*ez + tau_um= 0")
+Traceback (most recent call last):
+  File "/gpfs/scratchfs1/chl23026/jms24002/dedalus_2423658/fluc.py", line 91, in <module>
+Traceback (most recent call last):
+  File "/gpfs/scratchfs1/chl23026/jms24002/dedalus_2423658/fluc.py", line 91, in <module>
+    problem.add_equation("grad(h_mean(p)) - (Pr/Pe)*lap(um) - (4*pi*pi*Ri/(Rp-1))*(Tm-Sm)*ez + tau_um= 0")
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/problems.py", line 75, in add_equation
+    problem.add_equation("grad(h_mean(p)) - (Pr/Pe)*lap(um) - (4*pi*pi*Ri/(Rp-1))*(Tm-Sm)*ez + tau_um= 0")
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/problems.py", line 75, in add_equation
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/problems.py", line 75, in add_equation
+Traceback (most recent call last):
+  File "/gpfs/scratchfs1/chl23026/jms24002/dedalus_2423658/fluc.py", line 91, in <module>
+Traceback (most recent call last):
+  File "/gpfs/scratchfs1/chl23026/jms24002/dedalus_2423658/fluc.py", line 91, in <module>
+    problem.add_equation("grad(h_mean(p)) - (Pr/Pe)*lap(um) - (4*pi*pi*Ri/(Rp-1))*(Tm-Sm)*ez + tau_um= 0")
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/problems.py", line 75, in add_equation
+    problem.add_equation("grad(h_mean(p)) - (Pr/Pe)*lap(um) - (4*pi*pi*Ri/(Rp-1))*(Tm-Sm)*ez + tau_um= 0")
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/problems.py", line 75, in add_equation
+    problem.add_equation("grad(h_mean(p)) - (Pr/Pe)*lap(um) - (4*pi*pi*Ri/(Rp-1))*(Tm-Sm)*ez + tau_um= 0")
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/problems.py", line 75, in add_equation
+    LHS = eval(LHS_str, namespace)
+    LHS = eval(LHS_str, namespace)
+    LHS = eval(LHS_str, namespace)
+    LHS = eval(LHS_str, namespace)
+    LHS = eval(LHS_str, namespace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+    LHS = eval(LHS_str, namespace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+    LHS = eval(LHS_str, namespace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 1, in <module>
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/field.py", line 89, in __add__
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 1, in <module>
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/field.py", line 89, in __add__
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 1, in <module>
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/field.py", line 89, in __add__
+    problem.add_equation("grad(h_mean(p)) - (Pr/Pe)*lap(um) - (4*pi*pi*Ri/(Rp-1))*(Tm-Sm)*ez + tau_um= 0")
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/problems.py", line 75, in add_equation
+    LHS = eval(LHS_str, namespace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+    LHS = eval(LHS_str, namespace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 1, in <module>
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/field.py", line 89, in __add__
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 1, in <module>
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/field.py", line 89, in __add__
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 1, in <module>
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/field.py", line 89, in __add__
+  File "<string>", line 1, in <module>
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/field.py", line 89, in __add__
+  File "<string>", line 1, in <module>
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/field.py", line 89, in __add__
+    LHS = eval(LHS_str, namespace)
+    LHS = eval(LHS_str, namespace)
+    LHS = eval(LHS_str, namespace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 1, in <module>
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/field.py", line 89, in __add__
+    LHS = eval(LHS_str, namespace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 1, in <module>
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/field.py", line 89, in __add__
+  File "<string>", line 1, in <module>
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/field.py", line 89, in __add__
+    LHS = eval(LHS_str, namespace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 1, in <module>
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/field.py", line 89, in __add__
+    LHS = eval(LHS_str, namespace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 1, in <module>
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/field.py", line 89, in __add__
+    LHS = eval(LHS_str, namespace)
+    LHS = eval(LHS_str, namespace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 1, in <module>
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/field.py", line 89, in __add__
+    LHS = eval(LHS_str, namespace)
+    LHS = eval(LHS_str, namespace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 1, in <module>
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/field.py", line 89, in __add__
+    LHS = eval(LHS_str, namespace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 1, in <module>
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/field.py", line 89, in __add__
+    LHS = eval(LHS_str, namespace)
+    LHS = eval(LHS_str, namespace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 1, in <module>
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/field.py", line 89, in __add__
+    LHS = eval(LHS_str, namespace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+    LHS = eval(LHS_str, namespace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 1, in <module>
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/field.py", line 89, in __add__
+    LHS = eval(LHS_str, namespace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 1, in <module>
+    LHS = eval(LHS_str, namespace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 1, in <module>
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/field.py", line 89, in __add__
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 1, in <module>
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/field.py", line 89, in __add__
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 1, in <module>
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/field.py", line 89, in __add__
+    LHS = eval(LHS_str, namespace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 1, in <module>
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/field.py", line 89, in __add__
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 1, in <module>
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/field.py", line 89, in __add__
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 1, in <module>
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/field.py", line 89, in __add__
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 1, in <module>
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/field.py", line 89, in __add__
+  File "<string>", line 1, in <module>
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/field.py", line 89, in __add__
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/field.py", line 89, in __add__
+    LHS = eval(LHS_str, namespace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 1, in <module>
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/field.py", line 89, in __add__
+    LHS = eval(LHS_str, namespace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 1, in <module>
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/field.py", line 89, in __add__
+    LHS = eval(LHS_str, namespace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 1, in <module>
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/field.py", line 89, in __add__
+    LHS = eval(LHS_str, namespace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 1, in <module>
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/field.py", line 89, in __add__
+    problem.add_equation("grad(h_mean(p)) - (Pr/Pe)*lap(um) - (4*pi*pi*Ri/(Rp-1))*(Tm-Sm)*ez + tau_um= 0")
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/problems.py", line 75, in add_equation
+    LHS = eval(LHS_str, namespace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 1, in <module>
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/field.py", line 89, in __add__
+    return Add(self, other)
+           ^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/dispatch.py", line 17, in __call__
+    return Add(self, other)
+           ^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/dispatch.py", line 17, in __call__
+    return Add(self, other)
+           ^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/dispatch.py", line 17, in __call__
+    return Add(self, other)
+           ^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/dispatch.py", line 17, in __call__
+    return Add(self, other)
+           ^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/dispatch.py", line 17, in __call__
+    return Add(self, other)
+           ^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/dispatch.py", line 17, in __call__
+    return Add(self, other)
+           ^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/dispatch.py", line 17, in __call__
+    return Add(self, other)
+           ^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/dispatch.py", line 17, in __call__
+    return Add(self, other)
+           ^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/dispatch.py", line 17, in __call__
+    return Add(self, other)
+    return Add(self, other)
+           ^^^^^^^^^^^^^^^^
+    return Add(self, other)
+           ^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/dispatch.py", line 17, in __call__
+    return Add(self, other)
+           ^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/dispatch.py", line 17, in __call__
+    return Add(self, other)
+           ^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/dispatch.py", line 17, in __call__
+    return Add(self, other)
+           ^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/dispatch.py", line 17, in __call__
+    return Add(self, other)
+           ^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/dispatch.py", line 17, in __call__
+    return Add(self, other)
+           ^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/dispatch.py", line 17, in __call__
+    return Add(self, other)
+           ^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/dispatch.py", line 17, in __call__
+    return Add(self, other)
+           ^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/dispatch.py", line 17, in __call__
+    return Add(self, other)
+           ^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/dispatch.py", line 17, in __call__
+    return Add(self, other)
+           ^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/dispatch.py", line 17, in __call__
+    return Add(self, other)
+           ^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/dispatch.py", line 17, in __call__
+    return Add(self, other)
+           ^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/dispatch.py", line 17, in __call__
+    return Add(self, other)
+           ^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/dispatch.py", line 17, in __call__
+    return Add(self, other)
+           ^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/dispatch.py", line 17, in __call__
+    return Add(self, other)
+           ^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/dispatch.py", line 17, in __call__
+           ^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/dispatch.py", line 17, in __call__
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/dispatch.py", line 17, in __call__
+    return Add(self, other)
+           ^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/dispatch.py", line 17, in __call__
+    return Add(self, other)
+           ^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/dispatch.py", line 17, in __call__
+    return Add(self, other)
+           ^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/dispatch.py", line 17, in __call__
+    return Add(self, other)
+           ^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/dispatch.py", line 17, in __call__
+    return Add(self, other)
+           ^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/dispatch.py", line 17, in __call__
+    return Add(self, other)
+           ^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/dispatch.py", line 17, in __call__
+    args, kw = cls._preprocess_args(*args, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/arithmetic.py", line 68, in _preprocess_args
+    args, kw = cls._preprocess_args(*args, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/arithmetic.py", line 68, in _preprocess_args
+    args, kw = cls._preprocess_args(*args, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/arithmetic.py", line 68, in _preprocess_args
+    args, kw = cls._preprocess_args(*args, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/arithmetic.py", line 68, in _preprocess_args
+    args, kw = cls._preprocess_args(*args, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/arithmetic.py", line 68, in _preprocess_args
+    args, kw = cls._preprocess_args(*args, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/arithmetic.py", line 68, in _preprocess_args
+    args, kw = cls._preprocess_args(*args, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/arithmetic.py", line 68, in _preprocess_args
+    args, kw = cls._preprocess_args(*args, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/arithmetic.py", line 68, in _preprocess_args
+    args, kw = cls._preprocess_args(*args, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/arithmetic.py", line 68, in _preprocess_args
+    args, kw = cls._preprocess_args(*args, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/arithmetic.py", line 68, in _preprocess_args
+    args, kw = cls._preprocess_args(*args, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/arithmetic.py", line 68, in _preprocess_args
+    args, kw = cls._preprocess_args(*args, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/arithmetic.py", line 68, in _preprocess_args
+    args, kw = cls._preprocess_args(*args, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/arithmetic.py", line 68, in _preprocess_args
+    args, kw = cls._preprocess_args(*args, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/arithmetic.py", line 68, in _preprocess_args
+    args, kw = cls._preprocess_args(*args, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/arithmetic.py", line 68, in _preprocess_args
+    args, kw = cls._preprocess_args(*args, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/arithmetic.py", line 68, in _preprocess_args
+    args, kw = cls._preprocess_args(*args, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/arithmetic.py", line 68, in _preprocess_args
+    args, kw = cls._preprocess_args(*args, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/arithmetic.py", line 68, in _preprocess_args
+    args, kw = cls._preprocess_args(*args, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/arithmetic.py", line 68, in _preprocess_args
+    args, kw = cls._preprocess_args(*args, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/arithmetic.py", line 68, in _preprocess_args
+    args, kw = cls._preprocess_args(*args, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/arithmetic.py", line 68, in _preprocess_args
+    args, kw = cls._preprocess_args(*args, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/arithmetic.py", line 68, in _preprocess_args
+    args, kw = cls._preprocess_args(*args, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/arithmetic.py", line 68, in _preprocess_args
+    args, kw = cls._preprocess_args(*args, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/arithmetic.py", line 68, in _preprocess_args
+    args, kw = cls._preprocess_args(*args, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/arithmetic.py", line 68, in _preprocess_args
+    args, kw = cls._preprocess_args(*args, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/arithmetic.py", line 68, in _preprocess_args
+    args, kw = cls._preprocess_args(*args, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/arithmetic.py", line 68, in _preprocess_args
+    args, kw = cls._preprocess_args(*args, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/arithmetic.py", line 68, in _preprocess_args
+    args, kw = cls._preprocess_args(*args, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/arithmetic.py", line 68, in _preprocess_args
+    args, kw = cls._preprocess_args(*args, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/arithmetic.py", line 68, in _preprocess_args
+    args, kw = cls._preprocess_args(*args, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/arithmetic.py", line 68, in _preprocess_args
+    args, kw = cls._preprocess_args(*args, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/core/arithmetic.py", line 68, in _preprocess_args
+    tensorsig = unify_attributes(args, 'tensorsig', require=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 85, in unify_attributes
+    tensorsig = unify_attributes(args, 'tensorsig', require=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 85, in unify_attributes
+    tensorsig = unify_attributes(args, 'tensorsig', require=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 85, in unify_attributes
+    tensorsig = unify_attributes(args, 'tensorsig', require=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 85, in unify_attributes
+    tensorsig = unify_attributes(args, 'tensorsig', require=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 85, in unify_attributes
+    tensorsig = unify_attributes(args, 'tensorsig', require=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 85, in unify_attributes
+    tensorsig = unify_attributes(args, 'tensorsig', require=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 85, in unify_attributes
+    tensorsig = unify_attributes(args, 'tensorsig', require=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 85, in unify_attributes
+    tensorsig = unify_attributes(args, 'tensorsig', require=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 85, in unify_attributes
+    tensorsig = unify_attributes(args, 'tensorsig', require=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 85, in unify_attributes
+    tensorsig = unify_attributes(args, 'tensorsig', require=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 85, in unify_attributes
+    tensorsig = unify_attributes(args, 'tensorsig', require=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 85, in unify_attributes
+    tensorsig = unify_attributes(args, 'tensorsig', require=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 85, in unify_attributes
+    tensorsig = unify_attributes(args, 'tensorsig', require=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 85, in unify_attributes
+    tensorsig = unify_attributes(args, 'tensorsig', require=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 85, in unify_attributes
+    tensorsig = unify_attributes(args, 'tensorsig', require=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 85, in unify_attributes
+    tensorsig = unify_attributes(args, 'tensorsig', require=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 85, in unify_attributes
+    tensorsig = unify_attributes(args, 'tensorsig', require=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 85, in unify_attributes
+    tensorsig = unify_attributes(args, 'tensorsig', require=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 85, in unify_attributes
+    tensorsig = unify_attributes(args, 'tensorsig', require=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 85, in unify_attributes
+    tensorsig = unify_attributes(args, 'tensorsig', require=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 85, in unify_attributes
+    tensorsig = unify_attributes(args, 'tensorsig', require=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 85, in unify_attributes
+    tensorsig = unify_attributes(args, 'tensorsig', require=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 85, in unify_attributes
+    tensorsig = unify_attributes(args, 'tensorsig', require=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 85, in unify_attributes
+    tensorsig = unify_attributes(args, 'tensorsig', require=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 85, in unify_attributes
+    tensorsig = unify_attributes(args, 'tensorsig', require=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 85, in unify_attributes
+    tensorsig = unify_attributes(args, 'tensorsig', require=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 85, in unify_attributes
+    tensorsig = unify_attributes(args, 'tensorsig', require=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 85, in unify_attributes
+    tensorsig = unify_attributes(args, 'tensorsig', require=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 85, in unify_attributes
+    tensorsig = unify_attributes(args, 'tensorsig', require=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 85, in unify_attributes
+    tensorsig = unify_attributes(args, 'tensorsig', require=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 85, in unify_attributes
+    tensorsig = unify_attributes(args, 'tensorsig', require=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 85, in unify_attributes
+    return unify(attrs)
+           ^^^^^^^^^^^^
+    return unify(attrs)
+           ^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 72, in unify
+    return unify(attrs)
+           ^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 72, in unify
+    return unify(attrs)
+           ^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 72, in unify
+    return unify(attrs)
+           ^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 72, in unify
+    return unify(attrs)
+           ^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 72, in unify
+    return unify(attrs)
+           ^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 72, in unify
+    return unify(attrs)
+           ^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 72, in unify
+    return unify(attrs)
+           ^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 72, in unify
+    return unify(attrs)
+           ^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 72, in unify
+    return unify(attrs)
+           ^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 72, in unify
+    return unify(attrs)
+           ^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 72, in unify
+    return unify(attrs)
+           ^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 72, in unify
+    return unify(attrs)
+           ^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 72, in unify
+    return unify(attrs)
+           ^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 72, in unify
+    return unify(attrs)
+           ^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 72, in unify
+    return unify(attrs)
+           ^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 72, in unify
+    return unify(attrs)
+           ^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 72, in unify
+    return unify(attrs)
+           ^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 72, in unify
+    return unify(attrs)
+           ^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 72, in unify
+    raise ValueError("Objects are not all equal.")
+    return unify(attrs)
+           ^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 72, in unify
+    return unify(attrs)
+           ^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 72, in unify
+    return unify(attrs)
+           ^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 72, in unify
+    return unify(attrs)
+           ^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 72, in unify
+    return unify(attrs)
+           ^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 72, in unify
+    raise ValueError("Objects are not all equal.")
+ValueError: Objects are not all equal.
+    return unify(attrs)
+           ^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 72, in unify
+    raise ValueError("Objects are not all equal.")
+    return unify(attrs)
+           ^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 72, in unify
+    return unify(attrs)
+           ^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 72, in unify
+    raise ValueError("Objects are not all equal.")
+ValueError: Objects are not all equal.
+    return unify(attrs)
+           ^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 72, in unify
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 72, in unify
+    raise ValueError("Objects are not all equal.")
+ValueError: Objects are not all equal.
+    raise ValueError("Objects are not all equal.")
+ValueError: Objects are not all equal.
+    raise ValueError("Objects are not all equal.")
+ValueError: Objects are not all equal.
+    raise ValueError("Objects are not all equal.")
+ValueError: Objects are not all equal.
+ValueError: Objects are not all equal.
+ValueError: Objects are not all equal.
+    raise ValueError("Objects are not all equal.")
+ValueError: Objects are not all equal.
+    raise ValueError("Objects are not all equal.")
+ValueError: Objects are not all equal.
+    raise ValueError("Objects are not all equal.")
+ValueError: Objects are not all equal.
+    raise ValueError("Objects are not all equal.")
+ValueError: Objects are not all equal.
+    raise ValueError("Objects are not all equal.")
+ValueError: Objects are not all equal.
+    raise ValueError("Objects are not all equal.")
+ValueError: Objects are not all equal.
+    raise ValueError("Objects are not all equal.")
+ValueError: Objects are not all equal.
+    raise ValueError("Objects are not all equal.")
+ValueError: Objects are not all equal.
+    raise ValueError("Objects are not all equal.")
+ValueError: Objects are not all equal.
+    raise ValueError("Objects are not all equal.")
+ValueError: Objects are not all equal.
+    raise ValueError("Objects are not all equal.")
+ValueError: Objects are not all equal.
+    return unify(attrs)
+           ^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 72, in unify
+    raise ValueError("Objects are not all equal.")
+ValueError: Objects are not all equal.
+    raise ValueError("Objects are not all equal.")
+ValueError: Objects are not all equal.
+    raise ValueError("Objects are not all equal.")
+ValueError: Objects are not all equal.
+    raise ValueError("Objects are not all equal.")
+ValueError: Objects are not all equal.
+    raise ValueError("Objects are not all equal.")
+ValueError: Objects are not all equal.
+    raise ValueError("Objects are not all equal.")
+ValueError: Objects are not all equal.
+    raise ValueError("Objects are not all equal.")
+ValueError: Objects are not all equal.
+    raise ValueError("Objects are not all equal.")
+ValueError: Objects are not all equal.
+    raise ValueError("Objects are not all equal.")
+ValueError: Objects are not all equal.
+    raise ValueError("Objects are not all equal.")
+ValueError: Objects are not all equal.
+    raise ValueError("Objects are not all equal.")
+ValueError: Objects are not all equal.
+    return unify(attrs)
+           ^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 72, in unify
+    return unify(attrs)
+           ^^^^^^^^^^^^
+  File "/home/jms24002/miniforge3/envs/dedalus3/lib/python3.12/site-packages/dedalus/tools/general.py", line 72, in unify
+    raise ValueError("Objects are not all equal.")
+ValueError: Objects are not all equal.
+    raise ValueError("Objects are not all equal.")
+ValueError: Objects are not all equal.
