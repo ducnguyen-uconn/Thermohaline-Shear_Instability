@@ -10,8 +10,8 @@ Rp (R_rho, diffusive density ratio),
 Pe (Peclet)
 
 To run, restart, and plot using e.g. 4 processes:
-    $ mpiexec -n 24 python3 fluc.py
-    $ mpiexec -n 24 python3 fluc.py --restart
+    $ mpiexec -n 24 python3 fluc_vector.py
+    $ mpiexec -n 24 python3 fluc_vector.py --restart
 '''
 import sys
 import numpy as np
@@ -88,18 +88,15 @@ problem = d3.IVP([p,tau_p,
 problem.add_equation("trace(grad(U))+tau_p = 0")
 problem.add_equation("integ(p) = 0") # Pressure gauge
 
-problem.add_equation("dt(um) + grad(h_mean(p)) - (Pr/Pe)*lap(um) - (4*pi*pi*Ri/(Rp-1))*(Tm-Sm)*ez = - dz(h_mean(upz*up))")
-# problem.add_equation("dt(umx)                                              = - dz(h_mean(upz*upx))")
-# problem.add_equation("         dz(h_mean(p))  - (4*pi*pi*Ri/(Rp-1))*(Tm-Sm) = - dz(h_mean(upz*upz))")
-
-problem.add_equation("dt(up) + Ubg*dx(up) + upz*dz(Ubg)*ex + grad(p-h_mean(p)) - (Pr/Pe)*lap(up) - (4*pi*pi*Ri/(Rp-1))*(Tp-Sp)*ez = - up@grad(um)-um@grad(up)-up@grad(up)+dz(h_mean(upz*up))")
+problem.add_equation("dt(um)                               + grad(h_mean(p))   - (Pr/Pe)*lap(um) - (4*pi*pi*Ri/(Rp-1))*(Tm-Sm)*ez =             - dz(h_mean(upz*up))")
+problem.add_equation("dt(up) + Ubg*dx(up) + upz*dz(Ubg)*ex + grad(p-h_mean(p)) - (Pr/Pe)*lap(up) - (4*pi*pi*Ri/(Rp-1))*(Tp-Sp)*ez = - U@grad(U) + dz(h_mean(upz*up))")
 
 
-problem.add_equation("dt(Tm)              - (1./Pe)*dz(dz(Tm))= - dz(h_mean(upz*Tp))")
-problem.add_equation("dt(Tp) + Ubg*dx(Tp) - (1./Pe)*lap(Tp) - upz = - up@grad(Tm)-um@grad(Tp)-up@grad(Tp)+dz(h_mean(upz*Tp))")
+problem.add_equation("dt(Tm)              - (1./Pe)*dz(dz(Tm))       =             - dz(h_mean(upz*Tp))")
+problem.add_equation("dt(Tp) + Ubg*dx(Tp) - (1./Pe)*lap(Tp)    - upz = - U@grad(T) + dz(h_mean(upz*Tp))")
 
-problem.add_equation("dt(Sm)             - (tau/Pe)*dz(dz(Sm))= - dz(h_mean((upz)*Sp))")
-problem.add_equation("dt(Sp) + Ubg*dx(Sp) - (tau/Pe)*lap(Sp) - Rp*(upz) = - up@grad(Sm)-um@grad(Sp)-up@grad(Sp)+dz(h_mean((upz)*Sp))")
+problem.add_equation("dt(Sm)              - (tau/Pe)*dz(dz(Sm))            =            - dz(h_mean((upz)*Sp))")
+problem.add_equation("dt(Sp) + Ubg*dx(Sp) - (tau/Pe)*lap(Sp)    - Rp*(upz) = -U@grad(S) + dz(h_mean((upz)*Sp))")
 
 
 # timestepper = d3.RK443
@@ -135,8 +132,8 @@ timehistory.add_task(dz(Sm), name='S_grad') # horizontally averaged profiles of 
 timehistory.add_task(dz(Tm), name='T_grad')
 timehistory.add_task(h_mean(U@ez*S), name='S_conv_flux') # horizontally averaged profiles of scalar convective fluxes
 timehistory.add_task(h_mean(U@ez*T), name='T_conv_flux')
-timehistory.add_task(h_mean(U@ez*S)/dz(Sm), name='S_tur_diff') # horizontally averaged profiles of turbulent diffusivity
-timehistory.add_task(h_mean(U@ez*T)/dz(Tm), name='T_tur_diff')
+# timehistory.add_task(h_mean(U@ez*S)/dz(Sm), name='S_tur_diff') # horizontally averaged profiles of turbulent diffusivity
+# timehistory.add_task(h_mean(U@ez*T)/dz(Tm), name='T_tur_diff')
 # timehistory.add_task(h_mean(U@ez*Rho)/dz(Rhom), name='den_tur_diff')
 
 timehistory.add_task(vol_avg(np.sqrt(upx*upx)), name='urms')
@@ -197,7 +194,7 @@ try:
             if dist.comm.rank == 0:
                 plt.figure(figsize=(3,3))
                 plt.plot(umg[0].T,np.linspace(0,1.,int(Nz*dealias)))
-                plt.savefig('fluc/um_time={:010.3f}.png'.format(solver.sim_time),dpi=200, bbox_inches='tight')
+                plt.savefig('fluc_vector/um_time={:010.3f}.png'.format(solver.sim_time),dpi=200, bbox_inches='tight')
                 plt.close()
                 # plot temperature distribution
                 plt.figure(figsize=(10,3))
@@ -209,7 +206,7 @@ try:
                 plt.ylabel(r'$z$')
                 plt.title("t = {:.3f}".format(solver.sim_time))
                 # plt.show()
-                plt.savefig('fluc/T_time={:010.3f}.png'.format(solver.sim_time),dpi=200, bbox_inches='tight')
+                plt.savefig('fluc_vector/T_time={:010.3f}.png'.format(solver.sim_time),dpi=200, bbox_inches='tight')
                 plt.close()
                 # plot temperature distribution
                 plt.figure(figsize=(10,3))
@@ -221,7 +218,7 @@ try:
                 plt.ylabel(r'$z$')
                 plt.title("t = {:.3f}".format(solver.sim_time))
                 # plt.show()
-                plt.savefig('fluc/S_time={:010.3f}.png'.format(solver.sim_time),dpi=200, bbox_inches='tight')
+                plt.savefig('fluc_vector/S_time={:010.3f}.png'.format(solver.sim_time),dpi=200, bbox_inches='tight')
                 plt.close()
                 # plot horizontaly averaged density profiles
                 meanT = np.mean(Tg,axis=0,keepdims=True)
@@ -233,7 +230,7 @@ try:
                 plt.tick_params(axis='y', which='both', left=False, right=False, labelleft=False)
                 plt.title("t = {:.3f}".format(solver.sim_time))
                 # plt.show()
-                plt.savefig('fluc/meanDensity_time={:010.3f}.png'.format(solver.sim_time),dpi=200, bbox_inches='tight')
+                plt.savefig('fluc_vector/meanDensity_time={:010.3f}.png'.format(solver.sim_time),dpi=200, bbox_inches='tight')
                 plt.close()
             ###########################
             if math.isnan(np.max(Tg)):
