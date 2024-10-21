@@ -1,36 +1,50 @@
-TARGET= debugcode
-# CXX = g++
-CXX = mpicxx
-CXXFLAGS=-Wall -O3 -fopenmp -lfftw3 -march=native
-# CXXFLAGS=-Wall -Ofast -fopenmp -march=native
-SRCDIR= ./src
-OBJDIR= ./obj
-RESTART= ./restart
-SOURCE= $(wildcard $(SRCDIR)/*.cpp)
-OBJECT= $(addprefix $(OBJDIR)/, $(notdir $(SOURCE:.cpp=.o)))
-OUTPUT= out.$(TARGET).txt *.vtr *.vtm output stop TIEN_POD
-STOP= stop
+CXX = /usr/bin/mpicxx
+TYPE = release
+PREFIX = /user/local/
+CFLAGS = " -fPIC -lfftw3 -lm "
 
-# $ export LD_LIBRARY_PATH=/home/ducnguyen/channelflow
+DDC = ON
+NSOLVER = ON
+HDF5 = ON
 
-$(TARGET): $(OBJECT)
-	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJECT) -lm
+.PHONY: clean build
+update:
+	sudo apt-get update
+	sudo apt-get install libopenmpi-dev
+	sudo apt install libeigen3-dev
+	sudo apt-get install libfftw3-dev
+	sudo apt-get install libfftw3-mpi-dev
+	sudo apt install netcdf-bin libnetcdff-dev
 
-$(OBJDIR)/%.o: $(SRCDIR)/%.cpp
-	-mkdir -p $(OBJDIR)
-	$(CXX)  $(CXXFLAGS) -o $@ -c $< 
+clone:
+	rm -rf channelflow
+	git clone https://github.com/epfl-ecps/channelflow.git
 
-.PHONY: clean
-clean: 
-	rm -rf $(TARGET) $(OUTPUT)
-allclean: 
-	rm -rf $(TARGET) $(OBJECT) $(OUTPUT) $(OBJDIR) $(RESTART)
+cloneilc:
+	rm -rf channelflow
+	git clone --single-branch --branch module/ilc https://github.com/epfl-ecps/channelflow.git
+
+build:
+	mkdir -p build
+	cd build;\
+	cmake ../channelflow -DWITH_DDC=$(DDC) -DWITH_NSOLVER=$(NSOLVER) -DCMAKE_CXX_COMPILER=$(CXX) -DCMAKE_BUILD_TYPE=$(TYPE) -DCMAKE_INSTALL_PREFIX=$(PREFIX) -DCMAKE_CXX_FLAGS_RELEASE:STRING=$(CFLAGS) -DWITH_HDF5CXX=$(HDF5);\
+	make -j24
 
 run:
-	make clean
-	make -j4
-	sh run.sh
-continue:
-	rm -rf $(STOP)
-	make
-	sh run.sh
+	cp ./CMakeLists.txt ./channelflow/CMakeLists.txt
+	mkdir -p ./channelflow/modules/
+	rm -rf ./channelflow/modules/ddc
+	cp -r ./ddc ./channelflow/modules/ddc
+	make build
+	rm -rf data
+	mpiexec -n 16 ./build/modules/ddc/examples/2d_diffusive_convection
+
+
+clean:
+	rm -rf build
+	rm -rf data
+
+allclean:
+	rm -rf channelflow
+	rm -rf build
+	rm -rf data
