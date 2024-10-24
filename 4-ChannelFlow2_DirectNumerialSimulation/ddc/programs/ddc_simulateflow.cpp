@@ -1,9 +1,5 @@
 /**
- * DNS program, like the program for pure shear flows.
- *
- * This file is a part of channelflow version 2.0, https://channelflow.ch .
- * License is GNU GPL version 2 or later: ./LICENSE
- *
+ * 
  * Original author: Duc Nguyen
  */
 
@@ -34,60 +30,34 @@ using namespace chflow;
 int main(int argc, char* argv[]) {
     cfMPI_Init(&argc, &argv);
     {
-        cout << "================================================================\n";
-        cout << "This program integrates a plane Thermolhaline-shear flow from a random\n";
-        cout << "initial condition. Velocity fields are saved at intervals dT=1.0\n";
-        cout << "in a data/ directory, in channelflow's binary data file\n";
-        cout << "format." << endl << endl;
+        WriteProcessInfo(argc, argv);
+        string purpose(
+            "integrate wall-bounded double-diffusive convection "
+            "from a given initial condition and save fields to disk.");
 
-        // Define gridsize
-        const int Nx = 400;
-        const int Ny = 1001;
-        const int Nz = 10;
+        ArgList args(argc, argv, purpose);
 
-        // Define box size
-        const Real Lx = 0.4;
-        const Real a = 0.0;
-        const Real b = 1.0;
-        const Real Lz = 0.02;
-
-        // Define flow parameters
-        const Real Pr = 7.0;
-        const Real Rrho = 2.0;
-        const Real Ra = 1e5;
-        const Real Le = 100.0;
+        DDCFlags flags(args);
         
 
-        // Define integration parameters
-        // const int n = 32;         // take n steps between printouts
-        // const Real dt = 1.0 / n;  // integration timestep
-        // const Real T = 30.0;      // integrate from t=0 to t=T
+        args.section("Program options");
+        const int Nx_ = args.getint("-Nx", "--Nx", 32, "# x gridpoints");
+        const int Ny_ = args.getint("-Ny", "--Ny", 31, "# y gridpoints");
+        const int Nz_ = args.getint("-Nz", "--Nz", 32, "# z gridpoints");
+        const Real Lx_ = args.getreal("-Lx", "--Lx", 1, "streamwise (x) box length");
+        const Real Lz_ = args.getreal("-Lz", "--Lz", 1, "spanwise   (z) box length");
+        const Real ymin_ = args.getreal("-ymin", "--ymin", 0.0, "lower wall height (y is wallnormal) ");
+        const Real ymax_ = args.getreal("-ymax", "--ymax", 1.0, "upper wall height (y is wallnormal) ");
+       
+        args.check();
+        args.save("./");
+        
+
+        TimeStep dt(flags);
 
         fftw_loadwisdom();
-        // Define DNS parameters
-        DDCFlags flags;
+       
         
-        flags.Pr = Pr;
-        flags.Rrho = Rrho;
-        flags.Ra = Ra;
-        flags.Le = Le;
-
-        flags.ulowerwall = 0.0;
-        flags.uupperwall = 0.0;
-        flags.wlowerwall = 0.0;
-        flags.wupperwall = 0.0;
-        flags.tlowerwall = 0.0;
-        flags.tupperwall = 1.0;
-        flags.slowerwall = 0.0;
-        flags.supperwall = 1.0;
-        flags.timestepping = SBDF3;
-        flags.initstepping = CNRK2;
-        flags.dealiasing = DealiasXZ;
-        flags.constraint = PressureGradient;
-        flags.taucorrection = true;
-        flags.t0 = 0;
-        flags.dt = 0.002;
-        flags.T = 30;
 
         cout << "Parameters: " << endl;
         cout << "Ra = " << flags.Ra << endl;
@@ -102,19 +72,14 @@ int main(int argc, char* argv[]) {
         cout << "Tb = " << flags.tupperwall << endl;
         cout << "Sa = " << flags.slowerwall << endl;
         cout << "Sb = " << flags.supperwall << endl;
-        
-
-        TimeStep dt(flags);
-
-        
 
         // Construct data fields: 3d velocity and 1d pressure
         cout << "building velocity, temperature, salinity and pressure fields..." << flush;
         vector<FlowField> fields = {
-            FlowField(Nx, Ny, Nz, 3, Lx, Lz, a, b), // velocity
-            FlowField(Nx, Ny, Nz, 1, Lx, Lz, a, b), // temperature
-            FlowField(Nx, Ny, Nz, 1, Lx, Lz, a, b), // salinity
-            FlowField(Nx, Ny, Nz, 1, Lx, Lz, a, b)};// pressure
+            FlowField(Nx_, Ny_, Nz_, 3, Lx_, Lz_, ymin_, ymax_), // velocity
+            FlowField(Nx_, Ny_, Nz_, 1, Lx_, Lz_, ymin_, ymax_), // temperature
+            FlowField(Nx_, Ny_, Nz_, 1, Lx_, Lz_, ymin_, ymax_), // salinity
+            FlowField(Nx_, Ny_, Nz_, 1, Lx_, Lz_, ymin_, ymax_)};// pressure
         cout << "done" << endl;
 
 
@@ -127,10 +92,10 @@ int main(int argc, char* argv[]) {
         cout << "Perturbing velocity field..." << flush;
         fields[0].addPerturbations(kxmax, kzmax, 1.0, spectralDecay);
         fields[0] *= magnitude / L2Norm(fields[0]);
-        // fields[1].addPerturbations(kxmax, kzmax, 1.0, spectralDecay);
-        // fields[1] *= magnitude / L2Norm(fields[1]);
-        // fields[2].addPerturbations(kxmax, kzmax, 1.0, spectralDecay);
-        // fields[2] *= magnitude / L2Norm(fields[2]);
+        fields[1].addPerturbations(kxmax, kzmax, 1.0, spectralDecay);
+        fields[1] *= magnitude / L2Norm(fields[1]);
+        fields[2].addPerturbations(kxmax, kzmax, 1.0, spectralDecay);
+        fields[2] *= magnitude / L2Norm(fields[2]);
         cout << "done" << endl;
 
         // Construct Navier-Stoke integrator, set integration method
@@ -149,9 +114,13 @@ int main(int argc, char* argv[]) {
             // cout << "     Ubulk == " << ddc.Ubulk() << endl;
 
             // Write velocity and modified pressure fields to disk
-            fields[0].save("data/u" + i2s(int(t)));
-            fields[1].save("data/t" + i2s(int(t)));
-            fields[2].save("data/s" + i2s(int(t)));
+           // fields[0].save("data/u" + i2s(int(t)));//<<--- save only fluctuations
+            // fields[1].save("data/t" + i2s(int(t)));
+            // fields[2].save("data/s" + i2s(int(t)));
+
+            FlowField u_tot = totalVelocity(fields[0], flags); u_tot.save("data/u" + i2s(int(t)));//<<--- save total fields
+            FlowField temp_tot = totalTemperature(fields[1], flags); temp_tot.save("data/t" + i2s(int(t)));
+            FlowField salt_tot = totalSalinity(fields[2], flags); salt_tot.save("data/s" + i2s(int(t)));
 
             // Take n steps of length dt
             ddc.advance(fields, dt.n());

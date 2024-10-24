@@ -1,9 +1,9 @@
 set(
     ddc_APPS
     ddc_simulateflow
-    # ddc_findsoln
-    # ddc_continuesoln
-    # ddc_findeigenvals
+    ddc_findsoln
+    ddc_continuesoln
+    ddc_findeigenvals
     # ddc_edgetracking
     # ddc_addbaseflow
 )
