@@ -193,3 +193,11 @@ for (Real t = 0; t <= T; t += n * dt) {
     cout << endl;
 }
 ```
+
+
+
+sample:
+```bash
+mpiexec -n 16 ddc_simulateflow -Pr 10 -Ra 1000 -Le 100 -Rr 2 \
+
+```
