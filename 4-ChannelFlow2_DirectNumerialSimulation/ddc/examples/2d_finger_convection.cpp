@@ -138,7 +138,7 @@ int main(int argc, char* argv[]) {
         DDC ddc(fields, flags);
         cout << "done" << endl;
 
-        mkdir("data");
+        mkdir("2d_finger_convection");
         Real cfl = ddc.CFL(fields[0]);
         for (Real t = flags.t0; t <= flags.T; t += dt.dT()) {
             cout << "         t == " << t << endl;
@@ -149,9 +149,13 @@ int main(int argc, char* argv[]) {
             // cout << "     Ubulk == " << ddc.Ubulk() << endl;
 
             // Write velocity and modified pressure fields to disk
-            fields[0].save("data/u" + i2s(int(t)));
-            fields[1].save("data/t" + i2s(int(t)));
-            fields[2].save("data/s" + i2s(int(t)));
+            // fields[0].save("2d_finger_convection/u" + i2s(int(t)));//<<--- save only fluctuations
+            // fields[1].save("2d_finger_convection/t" + i2s(int(t)));
+            // fields[2].save("2d_finger_convection/s" + i2s(int(t)));
+
+            FlowField u_tot = totalVelocity(fields[0], flags); u_tot.save("2d_finger_convection/u" + i2s(int(t)));//<<--- save total fields
+            FlowField temp_tot = totalTemperature(fields[1], flags); temp_tot.save("2d_finger_convection/t" + i2s(int(t)));
+            FlowField salt_tot = totalSalinity(fields[2], flags); salt_tot.save("2d_finger_convection/s" + i2s(int(t)));
 
             // Take n steps of length dt
             ddc.advance(fields, dt.n());
