@@ -29,6 +29,12 @@ DDCFlags::DDCFlags(Real Pr_, Real Ra_, Real Le_, Real Rrho_,
     uupperwall = uupperwall_;
     wlowerwall = wlowerwall_;
     wupperwall = wupperwall_;
+
+    // timestepping = CNRK2;
+    // constraint = PressureGradient;
+    // baseflow = LaminarBase;
+    // nonlinearity = Convection;
+    // dealiasing = DealiasXZ;
 }
 
 DDCFlags::DDCFlags(ArgList& args, const bool laurette) {
@@ -82,6 +88,12 @@ DDCFlags::DDCFlags(ArgList& args, const bool laurette) {
     tupperwall = tupperwall_;
     slowerwall = slowerwall_;
     supperwall = supperwall_;
+
+    // timestepping = CNRK2;
+    // constraint = PressureGradient;
+    // baseflow = LaminarBase;
+    // nonlinearity = Convection;
+    // dealiasing = DealiasXZ;
     
     if (tsymmstr.length() > 0) {
         SymmetryList tsymms(tsymmstr);

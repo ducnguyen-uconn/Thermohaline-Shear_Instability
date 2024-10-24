@@ -384,7 +384,7 @@ void DDE::linear(const std::vector<FlowField>& infields, std::vector<FlowField>&
 
 void DDE::solve(std::vector<FlowField>& outfields, const std::vector<FlowField>& rhs, const int s) {
     // Method takes a right hand side {u} and solves for output fields {u,press}
-
+    
     // Make sure user provides correct RHS which can be created outside NSE with NSE::createRHS()
     assert(outfields.size() == (rhs.size() + 1));
     const int kxmax = outfields[0].kxmax();
@@ -485,8 +485,8 @@ void DDE::solve(std::vector<FlowField>& outfields, const std::vector<FlowField>&
             // Solve the helmholtz problem for the heat equation
             //=============================
             if (kx != 0 || kz != 0) {
-                heatsolver_[s][ix][iz].solve(Tk_.re, Rtk_.re, 0.0, 0.0);  // BC are considered through the base profile
-                heatsolver_[s][ix][iz].solve(Tk_.im, Rtk_.im, 0.0, 0.0);
+                heatsolver_[s][ix][iz].solve(Tk_.re, Rtk_.re, 0, 0);  // BC are considered through the base profile
+                heatsolver_[s][ix][iz].solve(Tk_.im, Rtk_.im, 0, 0);
             } else {  // kx,kz == 0,0
                 // LHS includes also the constant term C=kappa Tbase_yy, which can be added to RHS
                 if (nonzCt_) {
@@ -494,8 +494,8 @@ void DDE::solve(std::vector<FlowField>& outfields, const std::vector<FlowField>&
                         Rtk_.re[ny] -= Ct_.re[ny];
                 }
 
-                heatsolver_[s][ix][iz].solve(Tk_.re, Rtk_.re, 0.0, 0.0);
-                heatsolver_[s][ix][iz].solve(Tk_.im, Rtk_.im, 0.0, 0.0);
+                heatsolver_[s][ix][iz].solve(Tk_.re, Rtk_.re, 0, 0);
+                heatsolver_[s][ix][iz].solve(Tk_.im, Rtk_.im, 0, 0);
             }
 
             // Load solution into T.
@@ -520,8 +520,8 @@ void DDE::solve(std::vector<FlowField>& outfields, const std::vector<FlowField>&
             // Solve the helmholtz problem for the salt equation
             //=============================
             if (kx != 0 || kz != 0) {
-                saltsolver_[s][ix][iz].solve(Sk_.re, Rsk_.re, 0.0, 0.0);  // BC are considered through the base profile
-                saltsolver_[s][ix][iz].solve(Sk_.im, Rsk_.im, 0.0, 0.0);
+                saltsolver_[s][ix][iz].solve(Sk_.re, Rsk_.re, 0, 0);  // BC are considered through the base profile
+                saltsolver_[s][ix][iz].solve(Sk_.im, Rsk_.im, 0, 0);
             } else {  // kx,kz == 0,0
                 // LHS includes also the constant term C=1/Le Sbase_yy, which can be added to RHS
                 if (nonzCs_) {
@@ -529,8 +529,8 @@ void DDE::solve(std::vector<FlowField>& outfields, const std::vector<FlowField>&
                         Rsk_.re[ny] -= Cs_.re[ny];
                 }
 
-                saltsolver_[s][ix][iz].solve(Sk_.re, Rsk_.re, 0.0, 0.0);
-                saltsolver_[s][ix][iz].solve(Sk_.im, Rsk_.im, 0.0, 0.0);
+                saltsolver_[s][ix][iz].solve(Sk_.re, Rsk_.re, 0, 0);
+                saltsolver_[s][ix][iz].solve(Sk_.im, Rsk_.im, 0, 0);
             }
 
             // Load solution into S.
@@ -651,6 +651,7 @@ void DDE::createDDCBaseFlow() {
             Ubase_ = ChebyCoeff(My_, a_, b_, Spectral);
             Wbase_ = ChebyCoeff(My_, a_, b_, Spectral);
             Tbase_ = ChebyCoeff(My_, a_, b_, Spectral);
+            Sbase_ = ChebyCoeff(My_, a_, b_, Spectral);
             break;
         case LinearBase:
             std::cerr << "error in DDE::createBaseFlow :\n";
@@ -709,9 +710,9 @@ void DDE::createConstants() {
     }
 
     // check that constant v-term is zero:
-    for (int ny = 0; ny < My_; ++ny)
-        if (abs(- Pbasey_[ny]) > 1e-15)
-            std::cerr << "Wall-normal hydrostatic pressure is unballanced" << std::endl;
+    // for (int ny = 0; ny < My_; ++ny)
+    //     if (abs(- Pbasey_[ny]) > 1e-15)
+    //         std::cerr << "Wall-normal hydrostatic pressure is unballanced" << std::endl;
 
     // constant w-term:
     if (Wbaseyy_.length() > 0) {

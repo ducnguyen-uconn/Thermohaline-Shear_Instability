@@ -11,6 +11,7 @@
 #include "channelflow/dnsalgo.h"
 #include "modules/ddc/ddcflags.h"
 #include "modules/ddc/dde.h"
+#include "modules/ddc/ddcdsi.h"
 
 namespace chflow {
 
@@ -77,6 +78,7 @@ class DDC : public DNS {
     std::shared_ptr<DDE> newDDE(const std::vector<FlowField>& fields, const std::vector<ChebyCoeff>& base,
                                 const DDCFlags& flags);
 };
+
 
 }  // namespace chflow
 #endif  // DDC_H

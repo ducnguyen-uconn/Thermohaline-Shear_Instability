@@ -101,6 +101,7 @@ CHECK_INCLUDE_FILES(wordexp.h HAVE_WORDEXP_H)
 
 # Find all the dependencies
 find_package(Eigen3 REQUIRED)
+# INCLUDE_DIRECTORIES ( "$ENV{EIGEN3_INCLUDE_DIR}" )
 find_package(FFTW REQUIRED)
 set(CMAKE_REQUIRED_INCLUDES ${FFTW_INCLUDE_DIR})
 CHECK_INCLUDE_FILES(fftw3.h HAVE_FFTW_H)
@@ -202,6 +203,7 @@ if (WITH_DDC)
     add_subdirectory(modules/ddc/programs)
     add_subdirectory(modules/ddc/examples)
     add_subdirectory(modules/ddc/tools)
+    add_subdirectory(modules/ddc/validations)
 endif ()
 
 # Check if we want to build the python wrapper and have boost-python
